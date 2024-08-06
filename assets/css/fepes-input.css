@@ -1,0 +1,99 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@font-face {
+    font-family: "MontserratI";
+    src: url("../fonts/Montserrat-Italic.ttf");
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "Montserrat";
+    src: url("../fonts/Montserrat-Regular.ttf");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "MontserratM";
+    src: url("../fonts/Montserrat-Medium.ttf");
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "MontserratB";
+    src: url("../fonts/Montserrat-Bold.ttf");
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "MontserratSB";
+    src: url("../fonts/Montserrat-SemiBold.ttf");
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "MontserratEB";
+    src: url("../fonts/Montserrat-ExtraBold.ttf");
+    font-weight: bold;
+    font-style: normal;
+}
+
+
+html,
+:host {
+    line-height: 1.5;
+    /* 1 */
+    -webkit-text-size-adjust: 100%;
+    /* 2 */
+    -moz-tab-size: 4;
+    /* 3 */
+    -o-tab-size: 4;
+    tab-size: 4;
+    /* 3 */
+    font-family: Montserrat;
+    /* 4 */
+    font-feature-settings: normal;
+    /* 5 */
+    font-variation-settings: normal;
+    /* 6 */
+    -webkit-tap-highlight-color: transparent;
+    /* 7 */
+}
+
+@keyframes slide-in {
+    0% {
+        transform: "translateY(0.5rem)";
+        opacity: 0;
+    }
+
+    100% {
+        transform: "translateY(1.5rem)";
+        opacity: 1;
+
+    }
+}
+
+.slideIn {
+    animation: slide-in .25s ease-in-out forwards;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translatex(-1000%)
+    }
+}
+
+.scroll-infinite {
+    animation: scroll 60s linear infinite;
+}
