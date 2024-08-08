@@ -31,22 +31,22 @@
           <a href="/" class="text-md text-[#628e2f] hover:text-[#628e2f]"
             >Accueil</a
           >
-          <a href="./about.html" class="text-md hover:text-[#628e2f]"
+          <a href="/pages/about.html" class="text-md hover:text-[#628e2f]"
             >A Propos</a
           >
-          <a href="./activities.html" class="text-md hover:text-[#628e2f]"
+          <a href="/pages/activities.html" class="text-md hover:text-[#628e2f]"
             >Activites</a
           >
-          <a href="./projects.html" class="text-md hover:text-[#628e2f]"
+          <a href="/pages/projects.html" class="text-md hover:text-[#628e2f]"
             >Projets</a
           >
-          <a href="./members.html" class="text-md hover:text-[#628e2f]"
+          <a href="/pages/members.html" class="text-md hover:text-[#628e2f]"
             >Membres</a
           >
         </div>
         <!-- Extra button -->
         <a
-          href="./contact.html"
+          href="/pages/contact.html"
           class="hidden md:flex items-center justify-center px-4 py-2 rounded-md bg-[#628e2f] hover:bg-green-900 text-center text-white"
         >
           Contactez Nous
@@ -63,7 +63,7 @@
           class="absolute hidden z-50 top-14 left-0 w-full p-4 rounded-md bg-white slideIn"
         >
           <a
-            href="./"
+            href="/"
             class="flex items-center justify-between w-full mb-4 text-base hover:text-[#628e2f]"
             ><div
               class="flex items-center justify-center gap-x-2 text-[#628e2f]"
@@ -74,7 +74,7 @@
             <p class="text-2xl">.</p></a
           >
           <a
-            href="./about.html"
+            href="/pages/about.html"
             class="flex items-center justify-between w-full mb-4 text-base hover:text-[#628e2f]"
             ><div class="flex items-center justify-center gap-x-2">
               <div class="w-1 h-6 bg-black"></div>
@@ -83,7 +83,7 @@
             <p class="text-2xl">.</p></a
           >
           <a
-            href="./activities.html"
+            href="/pages/activities.html"
             class="flex items-center justify-between w-full mb-4 text-base hover:text-[#628e2f]"
             ><div class="flex items-center justify-center gap-x-2">
               <div class="w-1 h-6 bg-black"></div>
@@ -92,7 +92,7 @@
             <p class="text-2xl">.</p></a
           >
           <a
-            href="./projects.html"
+            href="/pages/projects.html"
             class="flex items-center justify-between w-full mb-4 text-base hover:text-[#628e2f]"
             ><div class="flex items-center justify-center gap-x-2">
               <div class="w-1 h-6 bg-black"></div>
@@ -101,7 +101,7 @@
             <p class="text-2xl">.</p></a
           >
           <a
-            href="./members.html"
+            href="/pages/members.html"
             class="flex items-center justify-between w-full mb-4 text-base hover:text-[#628e2f]"
             ><div class="flex items-center justify-center gap-x-2">
               <div class="w-1 h-6 bg-black"></div>
@@ -110,7 +110,7 @@
             <p class="text-2xl">.</p></a
           >
           <a
-            href="./contact.html"
+            href="/pages/contact.html"
             class="flex items-center justify-center px-4 py-2 rounded-md bg-[#628e2f] hover:bg-green-900 text-center text-white"
           >
             Contactez Nous
@@ -141,12 +141,12 @@
           quibusdam aut voluptas! Laudantium perspiciatis laborum quidem a
           aliquam.
         </div>
-        <a
+        <!-- <a
           href="#what-we-do"
           class="flex items-center justify-center px-10 py-4 rounded bg-white text-center"
         >
           Commencer
-        </a>
+        </a> -->
       </div>
       <div class="absolute w-full h-full bg-black opacity-75"></div>
       <img
@@ -438,16 +438,18 @@
       Activites
     </div>
     <!-- [Activities] Zone - Content -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-6 w-full px-4 md:px-6">
+    <div
+      class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-6 md:gap-x-10 w-full px-4 md:px-10 py-8 bg-slate-100"
+    >
       <div class="flex flex-col gap-y-4 md:gap-y-6">
         <div
-          class="flex flex-col justify-between items-center gap-y-2 h-[80vh] shadow-lg transition hover:transition ease-in-out hover:ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"
+          class="flex flex-col justify-between items-center gap-y-2 h-[80vh] bg-white shadow-lg overflow-hidden group"
         >
           <img
             src="assets/images/footer-image.jpg"
             alt=""
             srcset=""
-            class="w-full object-cover"
+            class="w-full object-cover transition group-hover:transition ease-in-out group-hover:ease-in-out delay-150 group-hover:-translate-y-1 group-hover:scale-110 duration-300"
           />
           <p class="p-4 text-sm text-justify text-ellipsis overflow-hidden">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate
@@ -486,196 +488,13 @@
           </div>
         </div>
         <div
-          class="flex flex-col justify-between items-center gap-y-2 h-[80vh] shadow-lg transition hover:transition ease-in-out hover:ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"
+          class="flex flex-col justify-between items-center gap-y-2 h-[80vh] bg-white shadow-lg overflow-hidden group"
         >
           <img
             src="assets/images/footer-image.jpg"
             alt=""
             srcset=""
-            class="w-full object-cover"
-          />
-          <p class="p-4 text-sm text-justify text-ellipsis overflow-hidden">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate
-            ipsum magni omnis. Totam eos laboriosam omnis numquam ex dolor dicta
-            aliquid odit ut temporibus, quis veritatis labore ducimus! Iste,
-            rerum. Nulla ab fugiat temporibus, autem explicabo ea necessitatibus
-            accusamus iure. Voluptates laboriosam, dolore consectetur eveniet
-            earum similique aliquam ut incidunt delectus autem asperiores
-            repellat quidem dolorum consequuntur quasi odit nemo!
-          </p>
-          <div class="w-full px-4 pt-2">
-            <div
-              class="flex items-center justify-between gap-x-2 w-full pb-2 border-b border-b-gray-400"
-            >
-              <div class="flex items justify-center w-8 md:w-12 h-8 md:h-12">
-                <img
-                  src="assets/images/logo-fepes.png"
-                  alt=""
-                  srcset=""
-                  class="w-full h-full object-contain"
-                />
-              </div>
-              <div class="flex-1 flex flex-col">
-                <p class="line-clamp-1">FEPES - Seminaire Educatif</p>
-                <p class="text-sm text-gray-400 line-clamp-1">24 - 04 - 2023</p>
-              </div>
-              <div
-                class="flex items justify-center w-8 md:w-12 h-8 md:h-12 bg-[#628e2f]"
-              ></div>
-            </div>
-          </div>
-          <div class="flex gap-x-6 py-2">
-            <div class="w-5 h-5 bg-black"></div>
-            <div class="w-5 h-5 bg-black"></div>
-            <div class="w-5 h-5 bg-black"></div>
-          </div>
-        </div>
-        <div
-          class="flex flex-col justify-between items-center gap-y-2 h-[80vh] shadow-lg transition hover:transition ease-in-out hover:ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"
-        >
-          <img
-            src="assets/images/footer-image.jpg"
-            alt=""
-            srcset=""
-            class="w-full object-cover"
-          />
-          <p class="p-4 text-sm text-justify text-ellipsis overflow-hidden">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate
-            ipsum magni omnis. Totam eos laboriosam omnis numquam ex dolor dicta
-            aliquid odit ut temporibus, quis veritatis labore ducimus! Iste,
-            rerum. Nulla ab fugiat temporibus, autem explicabo ea necessitatibus
-            accusamus iure. Voluptates laboriosam, dolore consectetur eveniet
-            earum similique aliquam ut incidunt delectus autem asperiores
-            repellat quidem dolorum consequuntur quasi odit nemo!
-          </p>
-          <div class="w-full px-4 pt-2">
-            <div
-              class="flex items-center justify-between gap-x-2 w-full pb-2 border-b border-b-gray-400"
-            >
-              <div class="flex items justify-center w-8 md:w-12 h-8 md:h-12">
-                <img
-                  src="assets/images/logo-fepes.png"
-                  alt=""
-                  srcset=""
-                  class="w-full h-full object-contain"
-                />
-              </div>
-              <div class="flex-1 flex flex-col">
-                <p class="line-clamp-1">FEPES - Seminaire Educatif</p>
-                <p class="text-sm text-gray-400 line-clamp-1">24 - 04 - 2023</p>
-              </div>
-              <div
-                class="flex items justify-center w-8 md:w-12 h-8 md:h-12 bg-[#628e2f]"
-              ></div>
-            </div>
-          </div>
-          <div class="flex gap-x-6 py-2">
-            <div class="w-5 h-5 bg-black"></div>
-            <div class="w-5 h-5 bg-black"></div>
-            <div class="w-5 h-5 bg-black"></div>
-          </div>
-        </div>
-      </div>
-
-      <div class="flex flex-col gap-y-4 md:gap-y-6">
-        <div
-          class="flex flex-col justify-between items-center gap-y-2 h-[80vh] shadow-lg transition hover:transition ease-in-out hover:ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"
-        >
-          <img
-            src="assets/images/footer-image.jpg"
-            alt=""
-            srcset=""
-            class="w-full object-cover"
-          />
-          <p class="p-4 text-sm text-justify text-ellipsis overflow-hidden">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate
-            ipsum magni omnis. Totam eos laboriosam omnis numquam ex dolor dicta
-            aliquid odit ut temporibus, quis veritatis labore ducimus! Iste,
-            rerum. Nulla ab fugiat temporibus, autem explicabo ea necessitatibus
-            accusamus iure. Voluptates laboriosam, dolore consectetur eveniet
-            earum similique aliquam ut incidunt delectus autem asperiores
-            repellat quidem dolorum consequuntur quasi odit nemo!
-          </p>
-          <div class="w-full px-4 pt-2">
-            <div
-              class="flex items-center justify-between gap-x-2 w-full pb-2 border-b border-b-gray-400"
-            >
-              <div class="flex items justify-center w-8 md:w-12 h-8 md:h-12">
-                <img
-                  src="assets/images/logo-fepes.png"
-                  alt=""
-                  srcset=""
-                  class="w-full h-full object-contain"
-                />
-              </div>
-              <div class="flex-1 flex flex-col">
-                <p class="line-clamp-1">FEPES - Seminaire Educatif</p>
-                <p class="text-sm text-gray-400 line-clamp-1">24 - 04 - 2023</p>
-              </div>
-              <div
-                class="flex items justify-center w-8 md:w-12 h-8 md:h-12 bg-[#628e2f]"
-              ></div>
-            </div>
-          </div>
-          <div class="flex gap-x-6 py-2">
-            <div class="w-5 h-5 bg-black"></div>
-            <div class="w-5 h-5 bg-black"></div>
-            <div class="w-5 h-5 bg-black"></div>
-          </div>
-        </div>
-        <div
-          class="flex flex-col justify-between items-center gap-y-2 h-[80vh] shadow-lg transition hover:transition ease-in-out hover:ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"
-        >
-          <img
-            src="assets/images/footer-image.jpg"
-            alt=""
-            srcset=""
-            class="w-full object-cover"
-          />
-          <p class="p-4 text-sm text-justify text-ellipsis overflow-hidden">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate
-            ipsum magni omnis. Totam eos laboriosam omnis numquam ex dolor dicta
-            aliquid odit ut temporibus, quis veritatis labore ducimus! Iste,
-            rerum. Nulla ab fugiat temporibus, autem explicabo ea necessitatibus
-            accusamus iure. Voluptates laboriosam, dolore consectetur eveniet
-            earum similique aliquam ut incidunt delectus autem asperiores
-            repellat quidem dolorum consequuntur quasi odit nemo!
-          </p>
-          <div class="w-full px-4 pt-2">
-            <div
-              class="flex items-center justify-between gap-x-2 w-full pb-2 border-b border-b-gray-400"
-            >
-              <div class="flex items justify-center w-8 md:w-12 h-8 md:h-12">
-                <img
-                  src="assets/images/logo-fepes.png"
-                  alt=""
-                  srcset=""
-                  class="w-full h-full object-contain"
-                />
-              </div>
-              <div class="flex-1 flex flex-col">
-                <p class="line-clamp-1">FEPES - Seminaire Educatif</p>
-                <p class="text-sm text-gray-400 line-clamp-1">24 - 04 - 2023</p>
-              </div>
-              <div
-                class="flex items justify-center w-8 md:w-12 h-8 md:h-12 bg-[#628e2f]"
-              ></div>
-            </div>
-          </div>
-          <div class="flex gap-x-6 py-2">
-            <div class="w-5 h-5 bg-black"></div>
-            <div class="w-5 h-5 bg-black"></div>
-            <div class="w-5 h-5 bg-black"></div>
-          </div>
-        </div>
-        <div
-          class="flex flex-col justify-between items-center gap-y-2 h-[80vh] shadow-lg transition hover:transition ease-in-out hover:ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"
-        >
-          <img
-            src="assets/images/footer-image.jpg"
-            alt=""
-            srcset=""
-            class="w-full object-cover"
+            class="w-full object-cover transition group-hover:transition ease-in-out group-hover:ease-in-out delay-150 group-hover:-translate-y-1 group-hover:scale-110 duration-300"
           />
           <p class="p-4 text-sm text-justify text-ellipsis overflow-hidden">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate
@@ -716,13 +535,13 @@
       </div>
       <div class="flex flex-col gap-y-4 md:gap-y-6">
         <div
-          class="flex flex-col justify-between items-center gap-y-2 h-[80vh] shadow-lg transition hover:transition ease-in-out hover:ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"
+          class="flex flex-col justify-between items-center gap-y-2 h-[80vh] bg-white shadow-lg overflow-hidden group"
         >
           <img
             src="assets/images/footer-image.jpg"
             alt=""
             srcset=""
-            class="w-full object-cover"
+            class="w-full object-cover transition group-hover:transition ease-in-out group-hover:ease-in-out delay-150 group-hover:-translate-y-1 group-hover:scale-110 duration-300"
           />
           <p class="p-4 text-sm text-justify text-ellipsis overflow-hidden">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate
@@ -761,13 +580,13 @@
           </div>
         </div>
         <div
-          class="flex flex-col justify-between items-center gap-y-2 h-[80vh] shadow-lg transition hover:transition ease-in-out hover:ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"
+          class="flex flex-col justify-between items-center gap-y-2 h-[80vh] bg-white shadow-lg overflow-hidden group"
         >
           <img
             src="assets/images/footer-image.jpg"
             alt=""
             srcset=""
-            class="w-full object-cover"
+            class="w-full object-cover transition group-hover:transition ease-in-out group-hover:ease-in-out delay-150 group-hover:-translate-y-1 group-hover:scale-110 duration-300"
           />
           <p class="p-4 text-sm text-justify text-ellipsis overflow-hidden">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate
@@ -806,13 +625,13 @@
           </div>
         </div>
         <div
-          class="flex flex-col justify-between items-center gap-y-2 h-[80vh] shadow-lg transition hover:transition ease-in-out hover:ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"
+          class="flex flex-col justify-between items-center gap-y-2 h-[80vh] bg-white shadow-lg overflow-hidden group"
         >
           <img
             src="assets/images/footer-image.jpg"
             alt=""
             srcset=""
-            class="w-full object-cover"
+            class="w-full object-cover transition group-hover:transition ease-in-out group-hover:ease-in-out delay-150 group-hover:-translate-y-1 group-hover:scale-110 duration-300"
           />
           <p class="p-4 text-sm text-justify text-ellipsis overflow-hidden">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate
@@ -851,7 +670,144 @@
           </div>
         </div>
       </div>
-    </div> 
+      <div class="flex flex-col gap-y-4 md:gap-y-6">
+        <div
+          class="flex flex-col justify-between items-center gap-y-2 h-[80vh] bg-white shadow-lg overflow-hidden group"
+        >
+          <img
+            src="assets/images/footer-image.jpg"
+            alt=""
+            srcset=""
+            class="w-full object-cover transition group-hover:transition ease-in-out group-hover:ease-in-out delay-150 group-hover:-translate-y-1 group-hover:scale-110 duration-300"
+          />
+          <p class="p-4 text-sm text-justify text-ellipsis overflow-hidden">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate
+            ipsum magni omnis. Totam eos laboriosam omnis numquam ex dolor dicta
+            aliquid odit ut temporibus, quis veritatis labore ducimus! Iste,
+            rerum. Nulla ab fugiat temporibus, autem explicabo ea necessitatibus
+            accusamus iure. Voluptates laboriosam, dolore consectetur eveniet
+            earum similique aliquam ut incidunt delectus autem asperiores
+            repellat quidem dolorum consequuntur quasi odit nemo!
+          </p>
+          <div class="w-full px-4 pt-2">
+            <div
+              class="flex items-center justify-between gap-x-2 w-full pb-2 border-b border-b-gray-400"
+            >
+              <div class="flex items justify-center w-8 md:w-12 h-8 md:h-12">
+                <img
+                  src="assets/images/logo-fepes.png"
+                  alt=""
+                  srcset=""
+                  class="w-full h-full object-contain"
+                />
+              </div>
+              <div class="flex-1 flex flex-col">
+                <p class="line-clamp-1">FEPES - Seminaire Educatif</p>
+                <p class="text-sm text-gray-400 line-clamp-1">24 - 04 - 2023</p>
+              </div>
+              <div
+                class="flex items justify-center w-8 md:w-12 h-8 md:h-12 bg-[#628e2f]"
+              ></div>
+            </div>
+          </div>
+          <div class="flex gap-x-6 py-2">
+            <div class="w-5 h-5 bg-black"></div>
+            <div class="w-5 h-5 bg-black"></div>
+            <div class="w-5 h-5 bg-black"></div>
+          </div>
+        </div>
+        <div
+          class="flex flex-col justify-between items-center gap-y-2 h-[80vh] bg-white shadow-lg overflow-hidden group"
+        >
+          <img
+            src="assets/images/footer-image.jpg"
+            alt=""
+            srcset=""
+            class="w-full object-cover transition group-hover:transition ease-in-out group-hover:ease-in-out delay-150 group-hover:-translate-y-1 group-hover:scale-110 duration-300"
+          />
+          <p class="p-4 text-sm text-justify text-ellipsis overflow-hidden">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate
+            ipsum magni omnis. Totam eos laboriosam omnis numquam ex dolor dicta
+            aliquid odit ut temporibus, quis veritatis labore ducimus! Iste,
+            rerum. Nulla ab fugiat temporibus, autem explicabo ea necessitatibus
+            accusamus iure. Voluptates laboriosam, dolore consectetur eveniet
+            earum similique aliquam ut incidunt delectus autem asperiores
+            repellat quidem dolorum consequuntur quasi odit nemo!
+          </p>
+          <div class="w-full px-4 pt-2">
+            <div
+              class="flex items-center justify-between gap-x-2 w-full pb-2 border-b border-b-gray-400"
+            >
+              <div class="flex items justify-center w-8 md:w-12 h-8 md:h-12">
+                <img
+                  src="assets/images/logo-fepes.png"
+                  alt=""
+                  srcset=""
+                  class="w-full h-full object-contain"
+                />
+              </div>
+              <div class="flex-1 flex flex-col">
+                <p class="line-clamp-1">FEPES - Seminaire Educatif</p>
+                <p class="text-sm text-gray-400 line-clamp-1">24 - 04 - 2023</p>
+              </div>
+              <div
+                class="flex items justify-center w-8 md:w-12 h-8 md:h-12 bg-[#628e2f]"
+              ></div>
+            </div>
+          </div>
+          <div class="flex gap-x-6 py-2">
+            <div class="w-5 h-5 bg-black"></div>
+            <div class="w-5 h-5 bg-black"></div>
+            <div class="w-5 h-5 bg-black"></div>
+          </div>
+        </div>
+        <div
+          class="flex flex-col justify-between items-center gap-y-2 h-[80vh] bg-white shadow-lg overflow-hidden group"
+        >
+          <img
+            src="assets/images/footer-image.jpg"
+            alt=""
+            srcset=""
+            class="w-full object-cover transition group-hover:transition ease-in-out group-hover:ease-in-out delay-150 group-hover:-translate-y-1 group-hover:scale-110 duration-300"
+          />
+          <p class="p-4 text-sm text-justify text-ellipsis overflow-hidden">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate
+            ipsum magni omnis. Totam eos laboriosam omnis numquam ex dolor dicta
+            aliquid odit ut temporibus, quis veritatis labore ducimus! Iste,
+            rerum. Nulla ab fugiat temporibus, autem explicabo ea necessitatibus
+            accusamus iure. Voluptates laboriosam, dolore consectetur eveniet
+            earum similique aliquam ut incidunt delectus autem asperiores
+            repellat quidem dolorum consequuntur quasi odit nemo!
+          </p>
+          <div class="w-full px-4 pt-2">
+            <div
+              class="flex items-center justify-between gap-x-2 w-full pb-2 border-b border-b-gray-400"
+            >
+              <div class="flex items justify-center w-8 md:w-12 h-8 md:h-12">
+                <img
+                  src="assets/images/logo-fepes.png"
+                  alt=""
+                  srcset=""
+                  class="w-full h-full object-contain"
+                />
+              </div>
+              <div class="flex-1 flex flex-col">
+                <p class="line-clamp-1">FEPES - Seminaire Educatif</p>
+                <p class="text-sm text-gray-400 line-clamp-1">24 - 04 - 2023</p>
+              </div>
+              <div
+                class="flex items justify-center w-8 md:w-12 h-8 md:h-12 bg-[#628e2f]"
+              ></div>
+            </div>
+          </div>
+          <div class="flex gap-x-6 py-2">
+            <div class="w-5 h-5 bg-black"></div>
+            <div class="w-5 h-5 bg-black"></div>
+            <div class="w-5 h-5 bg-black"></div>
+          </div>
+        </div>
+      </div>
+    </div>
     <!-- ------------------------------------------------ [Our Projects] Zone ------------------------------------------------ -->
     <!-- [Our Projects] Zone - Head -->
     <div
@@ -1067,7 +1023,7 @@
         </div>
       </div>
       <a
-        href="./projects.html"
+        href="/pages/projects.html"
         class="p-4 border-4 border-white hover:bg-white text-white hover:text-[#628e2f] transition ease-in-out duration-700"
       >
         Voir plus sur nos projets
