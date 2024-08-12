@@ -3335,6 +3335,10 @@ html,
     margin-top: 3.5rem;
   }
 
+  .md\:mt-20 {
+    margin-top: 5rem;
+  }
+
   .md\:line-clamp-1 {
     overflow: hidden;
     display: -webkit-box;
@@ -3415,6 +3419,10 @@ html,
 
   .md\:h-\[50vh\] {
     height: 50vh;
+  }
+
+  .md\:h-\[4\] {
+    height: 4;
   }
 
   .md\:min-h-\[35vw\] {
@@ -3511,6 +3519,10 @@ html,
 
   .md\:justify-evenly {
     justify-content: space-evenly;
+  }
+
+  .md\:gap-8 {
+    gap: 2rem;
   }
 
   .md\:gap-x-10 {
