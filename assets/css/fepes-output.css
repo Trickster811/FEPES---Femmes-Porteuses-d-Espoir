@@ -3961,6 +3961,10 @@ html,
     width: 66.666667%;
   }
 
+  .md\:w-5\/6 {
+    width: 83.333333%;
+  }
+
   .md\:grow {
     flex-grow: 1;
   }
