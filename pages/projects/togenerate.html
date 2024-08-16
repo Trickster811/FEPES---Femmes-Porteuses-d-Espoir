@@ -1,0 +1,2990 @@
+
+<div class="w-full h-[50vh] px-20 mb-10 flex-col text-start text-white bg-[#00540d] hidden lg:flex lg:flex-col lg:justify-center lg:items-start"
+    style="background: linear-gradient(to bottom, #00540dcc, #00540dcc);
+            url( get_field('image_de_fond_banniere');) center center;
+          background-repeat: no-repeat;
+          background-size: cover;">
+    <h1 class="text-2xl md:text-4xl lg:text-5xl">
+         get_field('titre_banniere');
+    </h1>
+    <div class="h-2 w-40 my-2 bg-white"></div>
+    <h1 class="text-lg md:text-xl lg:text-2xl">
+         get_field('sous_titre_banniere');
+    </h1>
+</div>
+
+<!-- Medium Screen view -->
+<div class="lg:hidden">
+    <div class="flex flex-col my-5 items-center">
+        <h1 class="text-2xl md:text-4xl lg:text-5xl">
+            Enjoy reading our articles
+        </h1>
+        <div class="h-2 w-40 my-2 bg-[#00540d]"></div>
+    </div>
+    <div class="my-10 text-center">
+        <h1 class="text-lg md:text-xl lg:text-2xl">
+            Think Different » : « Think outsite the box ».
+        </h1>
+    </div>
+</div>
+
+      <!-- Main content -->
+      <div class="px-5 lg:px-24 grid lg:grid-cols-3 grid-cols-1 gap-x-16">
+        <!-- Center panel -->
+        <div class="relative col-span-2">
+        
+            if ( have_posts() ) : while ( have_posts() ) : the_post();
+       
+          <div class="relative mb-[10vh]">
+            <div
+              class="h-[40vh] sm:h-[80vh] w-full object-cover border-4 border-[#00540d] shadow-2xl"
+              style="
+                background: url( the_field('image_1'););
+                background-color: white;
+                background-repeat: no-repeat;
+                background-size: contain;
+                background-position: center;
+              "
+            ></div>
+            <div
+              class="absolute bottom-[-10vh] flex justify-end gap-x-5 w-full pr-5 pt-3"
+            >
+              <div
+                class="h-[20vh] object-cover w-[20vh] border-4 border-[#00540d] shadow-2xl"
+                style="background: url( the_field('image_2'););
+                background-color: white;
+                background-repeat: no-repeat;
+                background-size: contain;
+                background-position: center;
+              "
+              ></div>
+              <div
+                class="h-[20vh] object-cover w-[20vh] border-4 border-[#00540d] shadow-2xl"
+                style="background: url( the_field('image_3'););
+                background-color: white;
+                background-repeat: no-repeat;
+                background-size: contain;
+                background-position: center;
+              "
+              ></div>
+              <div
+                class="h-[20vh] object-cover w-[20vh] border-4 border-[#00540d] shadow-2xl"
+                style="background: url( the_field('image_4'););
+                background-color: white;
+                background-repeat: no-repeat;
+                background-size: contain;
+                background-position: center;
+              "
+              ></div>
+            </div>
+          </div>
+
+          <div class="py-10 text-justify">
+            <h2 class="text-3xl font-bold mb-5 text-justify">
+               the_title();
+            </h2>
+            <p class="text-justify">
+               the_content();
+            </p>
+          </div>
+
+        
+            endwhile; 
+        endif;?>
+          <div class="p-7 bg-[#00540d33]">
+            <p class="mb-3">
+              What do you think about this project? Are you willing to partner?
+            </p>
+            <div class="w-full relative flex items-center">
+              <div class="h-[1px] w-[15%] mr-3 bg-gray-500"></div>
+              <p>Living Seeds Lab</p>
+            </div>
+          </div>
+
+          <div class="font-['GOTHIC']">
+            <h3 class="mt-8 mb-2 text-2xl">Leave a Comment</h3>
+            <div class="grid grid-cols-2 gap-x-10 gap-y-5 py-5">
+              <input
+                type="text"
+                placeholder="Full Name *"
+                class="pb-4 border-b-2 border-black focus:outline-none"
+              />
+              <input
+                type="text"
+                placeholder="Email Adress *"
+                class="pb-4 border-b-2 border-black focus:outline-none"
+              />
+              <textarea
+                name=""
+                id=""
+                cols="30"
+                rows="5"
+                placeholder="Your comment *"
+                class="border-b-2 border-black focus:outline-none"
+              ></textarea>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right panel -->
+        <div class="grid grid-cols-1 lg:flex lg:flex-col gap-y-5 w-full">
+          <!-- Search section -->
+          <div class="w-full bg-gray-200 p-7">
+          </div>
+
+          <!-- Recents posts section -->
+          <div class="bg-gray-200 p-7">
+            <h2 class="mb-3 text-2xl">Recent Posts</h2>
+            <hr class="w-full mb-5 border-1 border-gray-400" />
+            <div class="">
+
+               $recent_posts = wp_get_recent_posts();
+              foreach( $recent_posts as $recent ) {
+                <div class="mb-3 grid">
+                    <div class="col-span-2  hover:text-green-800">
+                      
+                        printf( '<li><a class="text-sm" href="%1$s">%2$s</a></li>',
+                          esc_url( get_permalink( $recent['ID'] ) ),
+                          apply_filters( 'the_title', $recent['post_title'], $recent['ID'] )
+                      );?>
+                    </div>
+                </div>
+               }
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Second zone -->
+      <div class="w-full grid grid-cols-3">
+        <div class="col-span-2"></div>
+        <div class="col-span-1"></div>
+      </div>
+      
+    <!-- Hero Images Zone -->
+    <div class="relative w-full h-[80vh]">
+        <div
+          class="absolute z-30 flex flex-col items-center justify-center gap-y-6 w-full h-full pb-10 md:mt-14"
+        >
+          <div
+            class="px-6 py-4 border-4 md:border-8 border-white text-6xl md:text-8xl text-white"
+          >
+            FEPES
+          </div>
+          <div class="text-2xl text-white">Femmes Porteuses d&apos;Espoir</div>
+          <div
+            class="md:w-2/3 px-4 md:px-0 text-sm md:text-base text-white text-center"
+          >
+           the_content();
+          </div>
+          <!-- <a
+            href="#what-we-do"
+            class="flex items-center justify-center px-10 py-4 rounded bg-white text-center"
+          >
+            Commencer
+          </a> -->
+        </div>
+        <div class="absolute w-full h-full bg-black opacity-75"></div>
+        <img
+          src=" the_post_thumbnail_url()?>"
+          alt=""
+          srcset=""
+          class="w-full h-full object-cover"
+        />
+      </div>
+      <!-- ------------------------------------------------ [What we do?] Zone ------------------------------------------------ -->
+      <!-- [What we do?] Zone - Head -->
+       
+       
+        $mon_groupe = [];
+        $listPartenaires = new WP_Query(['showposts=5','category_name'=>'Caté partenaires']);
+     
+       if($listPartenaires->have_posts()) :
+         while($listPartenaires->have_posts()) : $listPartenaires->the_post(); 
+  
+        for($i = 1; $i <=3; $i++) {
+          $memo_url_logo = get_field("logo_".$i);
+          if($memo_url_logo) :
+            array_push($mon_groupe, $memo_url_logo);
+          else :
+            //echo '<h2>Pas de logo</h2>';
+          endif;
+        }
+       
+         endwhile; endif;
+      <div id="what-we-do" class="flex flex-col items-center justify-center gap-y-2 my-10 lg:my-14 uppercase text-xl md:text-3xl" >
+        <div class="w-10 h-1 bg-[#628e2f]"></div>
+        Que faisons-nous?
+      </div>
+      <!-- [What we do?] Zone - Content -->
+      <p class="px-4 text-sm text-center mb-4">
+        We work at the critical intersection of women and conflict providing
+        skills, knowledge, and resources that create sustainable change for women,
+        their families, and their communities.
+      </p>
+      <div class="grid grid-cols-1 md:flex md:flex-wrap justify-items-center md:justify-center md:items-center gap-y-8 md:gap-x-8 w-full px-4 text-white">
+  
+        
+          $recentPosts = new WP_Query();
+          $recentPosts->query(['showposts=5','category_name'=>'Activité']);
+       
+         if($recentPosts->have_posts()) :
+           while($recentPosts->have_posts()) : $recentPosts->the_post();
+          <div class="relative w-full md:w-1/4 h-[50vh] md:h-[70vh] bg-slate-300 group">
+            <img src=" get_the_post_thumbnail_url()"
+              alt=""
+              srcset=""
+              class="w-full h-full object-cover"/>
+            <div class="absolute top-0 left-0 w-full h-full bg-black opacity-55"></div>
+            <div class="absolute top-0 left-0 flex flex-col justify-end gap-y-4 w-full h-full p-4">
+              <div class="flex flex-col gap-y-2 text-[#628e2f]">
+                <p class="uppercase text-xl">FEPES</p>
+                <div class="w-1/2 h-1 bg-[#628e2f]"></div>
+              </div>
+              <p class="text-xl md:text-2xl uppercase">
+                Offre de stages academiques
+              </p>
+              <div class="w-1/2 h-1 bg-white"></div>
+            </div>
+            <div id="what-we-do-1" class="hidden group-hover:block absolute top-0 left-0 w-full h-full p-4 bg-[#628e2f] slideIn">
+              <div class="flex flex-col gap-y-4 w-full h-full">
+                <div class="flex flex-col gap-y-4 w-full">
+                  <h2 class="text-xl md:text-2xl uppercase">
+                     the_title()?>
+                  </h2>
+                  <div class="w-1/2 h-1 bg-white"></div>
+                </div>
+                <p class="text-justify text-sm">
+                   the_content();
+                </p>
+                <div class="w-1/2 h-1 bg-white"></div>
+                <a href=" the_permalink()?>" class="text-start text-md">
+                  Decouvrir ->
+                </a>
+              </div>
+            </div>
+          </div>
+          
+        
+          <h2>pas d'article</h2>
+        
+      </div>
+      <!-- ------------------------------------------------ [Our Partners] Zone ------------------------------------------------ -->
+      <!-- [Our Partners] Zone - Head -->
+      <div id="what-we-do" class="flex flex-col items-center justify-center gap-y-2 mt-10 lg:my-14 uppercase text-xl md:text-3xl">
+        <div class="w-10 h-1 bg-[#628e2f]"></div>
+        Nos Partenaires
+      </div>
+      <!-- [Our Partners] Zone - Content -->
+      <div class="flex items-center justify-center gap-x-8 mx-4 overflow-hidden">
+         foreach($mon_groupe as $in) :
+            <img src=" $in" alt="logo" srcset="" class="w-24 scroll-infinite">
+         endforeach
+      </div>
+      <!-- ------------------------------------------------ [Activities] Zone ------------------------------------------------ -->
+      <!-- [Activities] Zone - Head -->
+      <div id="what-we-do" class="flex flex-col items-center justify-center gap-y-2 my-10 lg:my-14 uppercase text-xl md:text-3xl">
+        <div class="w-10 h-1 bg-[#628e2f]"></div>
+        Activites
+      </div>
+      
+      <!-- [Activities] Zone - Content -->
+      <div class="grid grid-cols-3 md:grid-cols-2 lg:grid-cols-3 gap-x-6 md:gap-x-10 w-full px-4 md:px-10 py-8 bg-slate-100">
+        
+            $recentPosts2 = new WP_Query();
+            $recentPosts2->query(['showposts=10','category_name'=>'Activité']);
+         
+           if($recentPosts2->have_posts()) :
+             while($recentPosts2->have_posts()) : $recentPosts2->the_post();
+            <div class="flex flex-col justify-between items-center h-[80vh] bg-white shadow-lg overflow-hidden group">
+              <img src=" get_the_post_thumbnail_url();"
+                alt=""
+                srcset=""
+                class="w-full object-cover transition group-hover:transition ease-in-out group-hover:ease-in-out delay-150 group-hover:-translate-y-1 group-hover:scale-110 duration-300"/>
+              <span class="px-4 text-sm text-justify text-ellipsis overflow-hidden">
+                 the_content()
+              </span>
+              <div class="w-full px-4">
+                <div class="flex items-center justify-between gap-x-2 w-full pb-2 border-b border-b-gray-400">
+                  <div class="flex items justify-center w-8 md:w-12 h-8 md:h-12">
+                    <img
+                      src="/wp-content/themes/fepes/assets/images/logo-fepes.png"
+                      alt="logo-fepes"
+                      srcset=""
+                      class="w-full h-full object-contain"
+                    />
+                  </div>
+                  <div class="flex-1 flex flex-col">
+                    <p class="line-clamp-1">FEPES -  the_title();</p>
+                    <p class="text-sm text-gray-400 line-clamp-1"> the_date();</p>
+                  </div>
+                  <div class="flex items justify-center w-8 md:w-12 h-8 md:h-12 bg-[#628e2f]"></div>
+                </div>
+              </div>
+              <div class="flex gap-x-6 py-2">
+                <div class="w-5 h-5 bg-black"></div>
+                <div class="w-5 h-5 bg-black"></div>
+                <div class="w-5 h-5 bg-black"></div>
+              </div>
+            </div>
+            
+          
+            <h2>pas d'article</h2>
+          
+      </div>
+      <!-- ------------------------------------------------ [Our Projects] Zone ------------------------------------------------ -->
+      <!-- [Our Projects] Zone - Head -->
+      <div
+        id="what-we-do"
+        class="flex flex-col items-center justify-center gap-y-2 my-10 lg:my-14 uppercase text-xl md:text-3xl"
+      >
+        <div class="w-10 h-1 bg-[#628e2f]"></div>
+        Nos Projets
+      </div>
+      <!-- [Our Projects] Zone - Content -->
+      <div class="flex flex-col items-center justify-center pb-10 md:pb-20 bg-gradient-to-t from-[#628e2f] to-transparent">
+  
+        <div class="grid grid-cols-3 md:grid-cols-2 lg:grid-cols-3 gap-x-6 md:gap-x-10 w-full px-4 md:px-10 py-8">
+        
+            $recentPosts2 = new WP_Query();
+            $recentPosts2->query(['showposts=10','category_name'=>'Projet']);
+         
+           if($recentPosts2->have_posts()) :
+             while($recentPosts2->have_posts()) : $recentPosts2->the_post();
+  
+            <div class="relative flex flex-col md:grow w-full min-h-[20rem] mx-6 px-6">
+              <img
+                src=" get_the_post_thumbnail_url()?>"
+                alt=""
+                srcset=""
+                class="w-full h-full object-cover"
+              />
+              <div class="absolute w-full h-full bg-black opacity-65"></div>
+              <div class="absolute z-20 flex flex-wrap w-10 md:w-20">
+                <div class="flex flex-col">
+                  <div
+                    class="w-5 md:w-10 h-5 md:h-10 border-r border-b border-white bg-[#628e2f]"
+                  ></div>
+                  <div
+                    class="w-5 md:w-10 h-5 md:h-10 border-r border-b border-white bg-[#628e2f]"
+                  ></div>
+                </div>
+                <div
+                  class="w-5 md:w-10 h-5 md:h-10 border-r border-b border-white bg-[#628e2f]"
+                ></div>
+              </div>
+              <div class="absolute z-40 flex flex-col items-start justify-end gap-y-2 md:gap-y-4 w-full h-full p-4">
+                <div class="text-xl text-white line-clamp-2">
+                   the_title();
+                </div>
+                <div class="text-sm text-white text-justify text-ellipsis overflow-hidden line-clamp-3">
+                   the_content();
+                </div>
+                <div class="w-full h-1 bg-[#628e2f]"></div>
+                <div class="flex items-center justify-between w-full">
+                  <!-- Logo & App Name -->
+                  <a href="/" class="flex items-center justify-center gap-4">
+                    <!-- Logo Zone -->
+                    <div
+                      class="flex items justify-center w-8 md:w-12 h-8 md:h-12"
+                    >
+                      <img
+                        src="/wp-content/themes/fepes/assets/images/logo-fepes.png"
+                        alt=""
+                        srcset=""
+                        class="w-full h-full object-contain"
+                      />
+                    </div>
+                    <!-- App Name Zone -->
+                    <div class="text-lg md:text-2xl text-white">FEPES</div>
+                  </a>
+                  <a href=" the_permalink();" class="px-4 py-2 bg-white hover:bg-[#628e2f] text-[#628e2f] hover:text-white">Lire plus</a
+                  >
+                </div>
+              </div>
+            </div>
+            
+          
+            <h2>pas d'article</h2>
+          
+        </div>
+        <a
+          href="/pages/projects.html"
+          class="p-4 border-4 border-white mt-4 hover:bg-white text-white hover:text-[#628e2f] transition ease-in-out duration-700"
+        >
+          Voir plus sur nos projets
+        </a>
+      </div>
+      <!-- ------------------------------------------------ [FEPES Numbers] Zone ------------------------------------------------ -->
+      <div
+        class="flex flex-col md:flex-row items-center justify-evenly md:gap-x-6 gap-y-6 md:gap-y-0 p-10 my-14 bg-slate-300"
+      >
+        <div class="flex flex-col items-center justify-center gap-y-4">
+          <img
+            src="/wp-content/themes/fepes/assets/images/hexagon.png"
+            alt=""
+            srcset=""
+            class="w-10 md:w-20"
+          />
+          <p class="text-2xl md:text-4xl text-[#628e2f]">+ 123,987</p>
+          <p class="text-sm text-center">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc suscipit
+            sodales diam
+          </p>
+        </div>
+        <div class="flex flex-col items-center justify-center gap-y-4">
+          <img
+            src="/wp-content/themes/fepes/assets/images/square.png"
+            alt=""
+            srcset=""
+            class="w-10 md:w-20"
+          />
+          <p class="text-2xl md:text-4xl text-[#628e2f]">+ 123,987</p>
+          <p class="text-sm text-center">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc suscipit
+            sodales diam
+          </p>
+        </div>
+        <div class="flex flex-col items-center justify-center gap-y-4">
+          <img
+            src="/wp-content/themes/fepes/assets/images/triangle.png"
+            alt=""
+            srcset=""
+            class="w-10 md:w-20"
+          />
+          <p class="text-2xl md:text-4xl text-[#628e2f]">+ 123,987</p>
+          <p class="text-sm text-center">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc suscipit
+            sodales diam
+          </p>
+        </div>
+        <div class="flex flex-col items-center justify-center gap-y-4">
+          <img
+            src="/wp-content/themes/fepes/assets/images/star.png"
+            alt=""
+            srcset=""
+            class="w-10 md:w-20"
+          />
+          <p class="text-2xl md:text-4xl text-[#628e2f]">+ 123,987</p>
+          <p class="text-sm text-center">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc suscipit
+            sodales diam
+          </p>
+        </div>
+      </div>
+      <!-- ------------------------------------------------ [Donate] Zone ------------------------------------------------ -->
+      <div class="flex justify-center w-full px-4">
+        <div
+          class="flex flex-col md:flex-row items-center justify-between gap-y-4 md:gap-y-0 md:w-4/5 p-3 md:p-4 lg:p-8 rounded-md bg-slate-300"
+        >
+          <div class="flex flex-col items-center md:items-start gap-y-6 md:w-1/2">
+            <p class="text-3xl text-center md:text-start">
+              Support Future Leaders
+            </p>
+            <p class="text-sm text-justify md:text-start">
+              Aliquam id tincidunt diam. Quisque pellentesque felis nec maximus
+              lacinia. Donec id finibus justo. Sed quis mauris sit amet est
+              ullamcorper finibus sit amet a nisi. Sed facilisis nibh placerat,
+              lobortis nunc sed, convallis nibh. Praesent quis ligula ornare,
+              ultricies lacus vitae, dictum nunc. Nam at sem commodo, fringilla
+              nunc id, cursus lacus.
+            </p>
+            <button
+              class="w-fit px-4 py-2 rounded-md bg-[#628e2f] hover:bg-green-900 text-center text-white"
+            >
+              Faire un don
+            </button>
+          </div>
+          <img
+            src="/wp-content/themes/fepes/assets/images/donate.svg"
+            alt=""
+            srcset=""
+            class="w-1/2 md:w-1/3"
+          />
+        </div>
+      </div>
+       get_header();
+    <!-- Hero Images Zone -->
+    <div class="relative w-full h-[80vh]">
+      <div
+        class="absolute z-30 flex flex-col items-center justify-center gap-y-6 w-full h-full pb-10 md:mt-14"
+      >
+        <div
+          class="px-6 py-4 border-4 md:border-8 border-white text-6xl md:text-8xl text-white"
+        >
+          FEPES
+        </div>
+        <div class="text-2xl text-white">Femmes Porteuses d&apos;Espoir</div>
+        <div
+          class="md:w-2/3 px-4 md:px-0 text-sm md:text-base text-white text-center"
+        >
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deleniti,
+          voluptas modi. Aspernatur dicta aliquid atque culpa distinctio! Illum
+          et laudantium, soluta rem doloribus distinctio. Reiciendis explicabo
+          ab vitae provident corrupti. Laborum molestias quod rerum veritatis
+          delectus mollitia accusamus dolores architecto tempora, accusantium
+          ipsa sapiente illo voluptate dolore debitis fugiat rem facilis,
+          quibusdam aut voluptas! Laudantium perspiciatis laborum quidem a
+          aliquam.
+        </div>
+        <!-- <a
+          href="#what-we-do"
+          class="flex items-center justify-center px-10 py-4 rounded bg-white text-center"
+        >
+          Commencer
+        </a> -->
+      </div>
+      <div class="absolute w-full h-full bg-black opacity-75"></div>
+      <img
+        src="assets/images/hero-image.jpg"
+        alt=""
+        srcset=""
+        class="w-full h-full object-cover"
+      />
+    </div>
+    <!-- ------------------------------------------------ [What we do?] Zone ------------------------------------------------ -->
+    <!-- [What we do?] Zone - Head -->
+    <div id="what-we-do" class="flex flex-col items-center justify-center gap-y-2 my-10 lg:my-14 uppercase text-xl md:text-3xl" >
+      <div class="w-10 h-1 bg-[#628e2f]"></div>
+      Que faisons-nous?
+    </div>
+    <!-- [What we do?] Zone - Content -->
+    <p class="px-4 text-sm text-center mb-4">
+      We work at the critical intersection of women and conflict providing
+      skills, knowledge, and resources that create sustainable change for women,
+      their families, and their communities.
+    </p>
+    <div
+      class="grid grid-cols-1 md:flex md:flex-wrap justify-items-center md:justify-center md:items-center gap-y-8 md:gap-x-8 w-full px-4 text-white"
+    >
+      <div
+        class="relative w-full md:w-1/4 h-[50vh] md:h-[70vh] bg-slate-300 group"
+      >
+        <img
+          src="assets/images/stage-academique.jpg"
+          alt=""
+          srcset=""
+          class="w-full h-full object-cover"
+        />
+        <div
+          class="absolute top-0 left-0 w-full h-full bg-black opacity-55"
+        ></div>
+        <img
+          src="assets/images/hexagon.png"
+          alt=""
+          srcset=""
+          class="absolute -top-4 -right-4 w-20"
+        />
+        <div
+          class="absolute top-0 left-0 flex flex-col justify-end gap-y-4 w-full h-full p-4"
+        >
+          <div class="flex flex-col gap-y-2 text-[#628e2f]">
+            <p class="uppercase text-xl">FEPES</p>
+            <div class="w-1/2 h-1 bg-[#628e2f]"></div>
+          </div>
+          <p class="text-xl md:text-2xl uppercase">
+            Offre de stages academiques
+          </p>
+          <div class="w-1/2 h-1 bg-white"></div>
+        </div>
+        <div
+          id="what-we-do-1"
+          class="hidden group-hover:block absolute top-0 left-0 w-full h-full p-4 bg-[#628e2f] slideIn"
+        >
+          <button
+            class="flex justify-end w-full text-white underline"
+          >
+            retour
+          </button>
+        </div>
+      </div>
+      <div class="w-10 h-10 rounded-full bg-[#628e2f]"></div>
+      <div class="relative w-full md:w-1/4 h-[50vh] md:h-[70vh] bg-slate-300">
+        <img
+          src="assets/images/sensibilisation.jpg"
+          alt=""
+          srcset=""
+          class="w-full h-full object-cover"
+        />
+        <div
+          class="absolute top-0 left-0 w-full h-full bg-black opacity-55"
+        ></div>
+        <img
+          src="assets/images/circle.png"
+          alt=""
+          srcset=""
+          class="absolute -top-4 -right-4 w-20"
+        />
+        <div
+          class="absolute top-0 left-0 flex flex-col justify-end gap-y-4 w-full h-full p-4"
+        >
+          <div class="flex flex-col gap-y-2 text-[#628e2f]">
+            <p class="uppercase text-xl">FEPES</p>
+            <div class="w-1/2 h-1 bg-[#628e2f]"></div>
+          </div>
+          <p class="text-xl md:text-2xl uppercase">
+            Seminaires d'encadrement des Femmes
+          </p>
+          <button class="text-start underline text-sm hover:text-[#628e2f]">
+            Decouvrir ->
+          </button>
+        </div>
+      </div>
+      <div class="w-10 h-10 rounded-full bg-[#628e2f]"></div>
+      <div class="relative w-full md:w-1/4 h-[50vh] md:h-[70vh] bg-slate-300">
+        <img
+          src="assets/images/formation.jpg"
+          alt=""
+          srcset=""
+          class="w-full h-full object-cover"
+        />
+        <div
+          class="absolute top-0 left-0 w-full h-full bg-black opacity-55"
+        ></div>
+        <img
+          src="assets/images/square.png"
+          alt=""
+          srcset=""
+          class="absolute -top-4 -right-4 w-20"
+        />
+        <div
+          class="absolute top-0 left-0 flex flex-col justify-end gap-y-4 w-full h-full p-4"
+        >
+          <div class="flex flex-col gap-y-2 text-[#628e2f]">
+            <p class="uppercase text-xl">FEPES</p>
+            <div class="w-1/2 h-1 bg-[#628e2f]"></div>
+          </div>
+          <p class="text-xl md:text-2xl uppercase">Session de formation</p>
+          <button class="text-start underline text-sm hover:text-[#628e2f]">
+            Decouvrir ->
+          </button>
+        </div>
+      </div>
+      <div class="w-10 h-10 rounded-full bg-[#628e2f]"></div>
+      <div class="relative w-full md:w-1/4 h-[50vh] md:h-[70vh] bg-slate-300">
+        <img
+          src="assets/images/activite-educative.jpg"
+          alt=""
+          srcset=""
+          class="w-full h-full object-cover"
+        />
+        <div
+          class="absolute top-0 left-0 w-full h-full bg-black opacity-55"
+        ></div>
+        <img
+          src="assets/images/star.png"
+          alt=""
+          srcset=""
+          class="absolute -top-4 -right-4 w-20"
+        />
+        <div
+          class="absolute top-0 left-0 flex flex-col justify-end gap-y-4 w-full h-full p-4"
+        >
+          <div class="flex flex-col gap-y-2 text-[#628e2f]">
+            <p class="uppercase text-xl">FEPES</p>
+            <div class="w-1/2 h-1 bg-[#628e2f]"></div>
+          </div>
+          <p class="text-xl md:text-2xl uppercase">Activites educatives</p>
+          <button class="text-start underline text-sm hover:text-[#628e2f]">
+            Decouvrir ->
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- ------------------------------------------------ [Our Partners] Zone ------------------------------------------------ -->
+    <!-- [Our Partners] Zone - Head -->
+    <div
+      id="what-we-do"
+      class="flex flex-col items-center justify-center gap-y-2 mt-10 lg:my-14 uppercase text-xl md:text-3xl"
+    >
+      <div class="w-10 h-1 bg-[#628e2f]"></div>
+      Nos Partenaires
+    </div>
+    <!-- [Our Partners] Zone - Content -->
+    <div class="flex items-center justify-center gap-x-8 mx-4 overflow-hidden">
+      <img
+        src="assets/images/minproff-logo.png"
+        alt=""
+        srcset=""
+        class="w-24 scroll-infinite"
+      />
+      <img
+        src="assets/images/minas-logo.png"
+        alt=""
+        srcset=""
+        class="w-24 scroll-infinite"
+      />
+      <img
+        src="assets/images/minpmeesa-logo.png"
+        alt=""
+        srcset=""
+        class="w-24 scroll-infinite"
+      />
+      <img
+        src="assets/images/usa-yaounde-seal.png"
+        alt=""
+        srcset=""
+        class="w-24 scroll-infinite"
+      />
+      <img
+        src="assets/images/minsante.png"
+        alt=""
+        srcset=""
+        class="w-24 scroll-infinite"
+      />
+      <img
+        src="assets/images/Haut-commissariat-Cameroun-Canada-logo-1.png"
+        alt=""
+        srcset=""
+        class="w-24 scroll-infinite"
+      />
+      <img
+        src="assets/images/peace-corps-Logo.png"
+        alt=""
+        srcset=""
+        class="w-24 scroll-infinite"
+      />
+      <img
+        src="assets/images/GIZ-logo.png"
+        alt=""
+        srcset=""
+        class="w-24 scroll-infinite"
+      />
+      <img
+        src="assets/images/plan-international-logo.jpeg"
+        alt=""
+        srcset=""
+        class="w-24 scroll-infinite"
+      />
+      <img
+        src="assets/images/minproff-logo.png"
+        alt=""
+        srcset=""
+        class="w-24 scroll-infinite"
+      />
+      <img
+        src="assets/images/minas-logo.png"
+        alt=""
+        srcset=""
+        class="w-24 scroll-infinite"
+      />
+      <img
+        src="assets/images/minpmeesa-logo.png"
+        alt=""
+        srcset=""
+        class="w-24 scroll-infinite"
+      />
+      <img
+        src="assets/images/usa-yaounde-seal.png"
+        alt=""
+        srcset=""
+        class="w-24 scroll-infinite"
+      />
+      <img
+        src="assets/images/minsante.png"
+        alt=""
+        srcset=""
+        class="w-24 scroll-infinite"
+      />
+      <img
+        src="assets/images/Haut-commissariat-Cameroun-Canada-logo-1.png"
+        alt=""
+        srcset=""
+        class="w-24 scroll-infinite"
+      />
+      <img
+        src="assets/images/peace-corps-Logo.png"
+        alt=""
+        srcset=""
+        class="w-24 scroll-infinite"
+      />
+      <img
+        src="assets/images/GIZ-logo.png"
+        alt=""
+        srcset=""
+        class="w-24 scroll-infinite"
+      />
+      <img
+        src="assets/images/plan-international-logo.jpeg"
+        alt=""
+        srcset=""
+        class="w-24 scroll-infinite"
+      />
+    </div>
+    <!-- ------------------------------------------------ [Activities] Zone ------------------------------------------------ -->
+    <!-- [Activities] Zone - Head -->
+    <div
+      id="what-we-do"
+      class="flex flex-col items-center justify-center gap-y-2 my-10 lg:my-14 uppercase text-xl md:text-3xl"
+    >
+      <div class="w-10 h-1 bg-[#628e2f]"></div>
+      Activites
+    </div>
+    <!-- [Activities] Zone - Content -->
+    <div
+      class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-6 md:gap-x-10 w-full px-4 md:px-10 py-8 bg-slate-100"
+    >
+      <div class="flex flex-col gap-y-4 md:gap-y-6">
+        <div
+          class="flex flex-col justify-between items-center gap-y-2 h-[80vh] bg-white shadow-lg overflow-hidden group"
+        >
+          <img
+            src="assets/images/footer-image.jpg"
+            alt=""
+            srcset=""
+            class="w-full object-cover transition group-hover:transition ease-in-out group-hover:ease-in-out delay-150 group-hover:-translate-y-1 group-hover:scale-110 duration-300"
+          />
+          <p class="p-4 text-sm text-justify text-ellipsis overflow-hidden">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate
+            ipsum magni omnis. Totam eos laboriosam omnis numquam ex dolor dicta
+            aliquid odit ut temporibus, quis veritatis labore ducimus! Iste,
+            rerum. Nulla ab fugiat temporibus, autem explicabo ea necessitatibus
+            accusamus iure. Voluptates laboriosam, dolore consectetur eveniet
+            earum similique aliquam ut incidunt delectus autem asperiores
+            repellat quidem dolorum consequuntur quasi odit nemo!
+          </p>
+          <div class="w-full px-4 pt-2">
+            <div
+              class="flex items-center justify-between gap-x-2 w-full pb-2 border-b border-b-gray-400"
+            >
+              <div class="flex items justify-center w-8 md:w-12 h-8 md:h-12">
+                <img
+                  src="assets/images/logo-fepes.png"
+                  alt=""
+                  srcset=""
+                  class="w-full h-full object-contain"
+                />
+              </div>
+              <div class="flex-1 flex flex-col">
+                <p class="line-clamp-1">FEPES - Seminaire Educatif</p>
+                <p class="text-sm text-gray-400 line-clamp-1">24 - 04 - 2023</p>
+              </div>
+              <div
+                class="flex items justify-center w-8 md:w-12 h-8 md:h-12 bg-[#628e2f]"
+              ></div>
+            </div>
+          </div>
+          <div class="flex gap-x-6 py-2">
+            <div class="w-5 h-5 bg-black"></div>
+            <div class="w-5 h-5 bg-black"></div>
+            <div class="w-5 h-5 bg-black"></div>
+          </div>
+        </div>
+        <div
+          class="flex flex-col justify-between items-center gap-y-2 h-[80vh] bg-white shadow-lg overflow-hidden group"
+        >
+          <img
+            src="assets/images/footer-image.jpg"
+            alt=""
+            srcset=""
+            class="w-full object-cover transition group-hover:transition ease-in-out group-hover:ease-in-out delay-150 group-hover:-translate-y-1 group-hover:scale-110 duration-300"
+          />
+          <p class="p-4 text-sm text-justify text-ellipsis overflow-hidden">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate
+            ipsum magni omnis. Totam eos laboriosam omnis numquam ex dolor dicta
+            aliquid odit ut temporibus, quis veritatis labore ducimus! Iste,
+            rerum. Nulla ab fugiat temporibus, autem explicabo ea necessitatibus
+            accusamus iure. Voluptates laboriosam, dolore consectetur eveniet
+            earum similique aliquam ut incidunt delectus autem asperiores
+            repellat quidem dolorum consequuntur quasi odit nemo!
+          </p>
+          <div class="w-full px-4 pt-2">
+            <div
+              class="flex items-center justify-between gap-x-2 w-full pb-2 border-b border-b-gray-400"
+            >
+              <div class="flex items justify-center w-8 md:w-12 h-8 md:h-12">
+                <img
+                  src="assets/images/logo-fepes.png"
+                  alt=""
+                  srcset=""
+                  class="w-full h-full object-contain"
+                />
+              </div>
+              <div class="flex-1 flex flex-col">
+                <p class="line-clamp-1">FEPES - Seminaire Educatif</p>
+                <p class="text-sm text-gray-400 line-clamp-1">24 - 04 - 2023</p>
+              </div>
+              <div
+                class="flex items justify-center w-8 md:w-12 h-8 md:h-12 bg-[#628e2f]"
+              ></div>
+            </div>
+          </div>
+          <div class="flex gap-x-6 py-2">
+            <div class="w-5 h-5 bg-black"></div>
+            <div class="w-5 h-5 bg-black"></div>
+            <div class="w-5 h-5 bg-black"></div>
+          </div>
+        </div>
+      </div>
+      <div class="flex flex-col gap-y-4 md:gap-y-6">
+        <div
+          class="flex flex-col justify-between items-center gap-y-2 h-[80vh] bg-white shadow-lg overflow-hidden group"
+        >
+          <img
+            src="assets/images/footer-image.jpg"
+            alt=""
+            srcset=""
+            class="w-full object-cover transition group-hover:transition ease-in-out group-hover:ease-in-out delay-150 group-hover:-translate-y-1 group-hover:scale-110 duration-300"
+          />
+          <p class="p-4 text-sm text-justify text-ellipsis overflow-hidden">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate
+            ipsum magni omnis. Totam eos laboriosam omnis numquam ex dolor dicta
+            aliquid odit ut temporibus, quis veritatis labore ducimus! Iste,
+            rerum. Nulla ab fugiat temporibus, autem explicabo ea necessitatibus
+            accusamus iure. Voluptates laboriosam, dolore consectetur eveniet
+            earum similique aliquam ut incidunt delectus autem asperiores
+            repellat quidem dolorum consequuntur quasi odit nemo!
+          </p>
+          <div class="w-full px-4 pt-2">
+            <div
+              class="flex items-center justify-between gap-x-2 w-full pb-2 border-b border-b-gray-400"
+            >
+              <div class="flex items justify-center w-8 md:w-12 h-8 md:h-12">
+                <img
+                  src="assets/images/logo-fepes.png"
+                  alt=""
+                  srcset=""
+                  class="w-full h-full object-contain"
+                />
+              </div>
+              <div class="flex-1 flex flex-col">
+                <p class="line-clamp-1">FEPES - Seminaire Educatif</p>
+                <p class="text-sm text-gray-400 line-clamp-1">24 - 04 - 2023</p>
+              </div>
+              <div
+                class="flex items justify-center w-8 md:w-12 h-8 md:h-12 bg-[#628e2f]"
+              ></div>
+            </div>
+          </div>
+          <div class="flex gap-x-6 py-2">
+            <div class="w-5 h-5 bg-black"></div>
+            <div class="w-5 h-5 bg-black"></div>
+            <div class="w-5 h-5 bg-black"></div>
+          </div>
+        </div>
+        <div
+          class="flex flex-col justify-between items-center gap-y-2 h-[80vh] bg-white shadow-lg overflow-hidden group"
+        >
+          <img
+            src="assets/images/footer-image.jpg"
+            alt=""
+            srcset=""
+            class="w-full object-cover transition group-hover:transition ease-in-out group-hover:ease-in-out delay-150 group-hover:-translate-y-1 group-hover:scale-110 duration-300"
+          />
+          <p class="p-4 text-sm text-justify text-ellipsis overflow-hidden">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate
+            ipsum magni omnis. Totam eos laboriosam omnis numquam ex dolor dicta
+            aliquid odit ut temporibus, quis veritatis labore ducimus! Iste,
+            rerum. Nulla ab fugiat temporibus, autem explicabo ea necessitatibus
+            accusamus iure. Voluptates laboriosam, dolore consectetur eveniet
+            earum similique aliquam ut incidunt delectus autem asperiores
+            repellat quidem dolorum consequuntur quasi odit nemo!
+          </p>
+          <div class="w-full px-4 pt-2">
+            <div
+              class="flex items-center justify-between gap-x-2 w-full pb-2 border-b border-b-gray-400"
+            >
+              <div class="flex items justify-center w-8 md:w-12 h-8 md:h-12">
+                <img
+                  src="assets/images/logo-fepes.png"
+                  alt=""
+                  srcset=""
+                  class="w-full h-full object-contain"
+                />
+              </div>
+              <div class="flex-1 flex flex-col">
+                <p class="line-clamp-1">FEPES - Seminaire Educatif</p>
+                <p class="text-sm text-gray-400 line-clamp-1">24 - 04 - 2023</p>
+              </div>
+              <div
+                class="flex items justify-center w-8 md:w-12 h-8 md:h-12 bg-[#628e2f]"
+              ></div>
+            </div>
+          </div>
+          <div class="flex gap-x-6 py-2">
+            <div class="w-5 h-5 bg-black"></div>
+            <div class="w-5 h-5 bg-black"></div>
+            <div class="w-5 h-5 bg-black"></div>
+          </div>
+        </div>
+        <div
+          class="flex flex-col justify-between items-center gap-y-2 h-[80vh] bg-white shadow-lg overflow-hidden group"
+        >
+          <img
+            src="assets/images/footer-image.jpg"
+            alt=""
+            srcset=""
+            class="w-full object-cover transition group-hover:transition ease-in-out group-hover:ease-in-out delay-150 group-hover:-translate-y-1 group-hover:scale-110 duration-300"
+          />
+          <p class="p-4 text-sm text-justify text-ellipsis overflow-hidden">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate
+            ipsum magni omnis. Totam eos laboriosam omnis numquam ex dolor dicta
+            aliquid odit ut temporibus, quis veritatis labore ducimus! Iste,
+            rerum. Nulla ab fugiat temporibus, autem explicabo ea necessitatibus
+            accusamus iure. Voluptates laboriosam, dolore consectetur eveniet
+            earum similique aliquam ut incidunt delectus autem asperiores
+            repellat quidem dolorum consequuntur quasi odit nemo!
+          </p>
+          <div class="w-full px-4 pt-2">
+            <div
+              class="flex items-center justify-between gap-x-2 w-full pb-2 border-b border-b-gray-400"
+            >
+              <div class="flex items justify-center w-8 md:w-12 h-8 md:h-12">
+                <img
+                  src="assets/images/logo-fepes.png"
+                  alt=""
+                  srcset=""
+                  class="w-full h-full object-contain"
+                />
+              </div>
+              <div class="flex-1 flex flex-col">
+                <p class="line-clamp-1">FEPES - Seminaire Educatif</p>
+                <p class="text-sm text-gray-400 line-clamp-1">24 - 04 - 2023</p>
+              </div>
+              <div
+                class="flex items justify-center w-8 md:w-12 h-8 md:h-12 bg-[#628e2f]"
+              ></div>
+            </div>
+          </div>
+          <div class="flex gap-x-6 py-2">
+            <div class="w-5 h-5 bg-black"></div>
+            <div class="w-5 h-5 bg-black"></div>
+            <div class="w-5 h-5 bg-black"></div>
+          </div>
+        </div>
+      </div>
+      <div class="flex flex-col gap-y-4 md:gap-y-6">
+        <div
+          class="flex flex-col justify-between items-center gap-y-2 h-[80vh] bg-white shadow-lg overflow-hidden group"
+        >
+          <img
+            src="assets/images/footer-image.jpg"
+            alt=""
+            srcset=""
+            class="w-full object-cover transition group-hover:transition ease-in-out group-hover:ease-in-out delay-150 group-hover:-translate-y-1 group-hover:scale-110 duration-300"
+          />
+          <p class="p-4 text-sm text-justify text-ellipsis overflow-hidden">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate
+            ipsum magni omnis. Totam eos laboriosam omnis numquam ex dolor dicta
+            aliquid odit ut temporibus, quis veritatis labore ducimus! Iste,
+            rerum. Nulla ab fugiat temporibus, autem explicabo ea necessitatibus
+            accusamus iure. Voluptates laboriosam, dolore consectetur eveniet
+            earum similique aliquam ut incidunt delectus autem asperiores
+            repellat quidem dolorum consequuntur quasi odit nemo!
+          </p>
+          <div class="w-full px-4 pt-2">
+            <div
+              class="flex items-center justify-between gap-x-2 w-full pb-2 border-b border-b-gray-400"
+            >
+              <div class="flex items justify-center w-8 md:w-12 h-8 md:h-12">
+                <img
+                  src="assets/images/logo-fepes.png"
+                  alt=""
+                  srcset=""
+                  class="w-full h-full object-contain"
+                />
+              </div>
+              <div class="flex-1 flex flex-col">
+                <p class="line-clamp-1">FEPES - Seminaire Educatif</p>
+                <p class="text-sm text-gray-400 line-clamp-1">24 - 04 - 2023</p>
+              </div>
+              <div
+                class="flex items justify-center w-8 md:w-12 h-8 md:h-12 bg-[#628e2f]"
+              ></div>
+            </div>
+          </div>
+          <div class="flex gap-x-6 py-2">
+            <div class="w-5 h-5 bg-black"></div>
+            <div class="w-5 h-5 bg-black"></div>
+            <div class="w-5 h-5 bg-black"></div>
+          </div>
+        </div>
+        <div
+          class="flex flex-col justify-between items-center gap-y-2 h-[80vh] bg-white shadow-lg overflow-hidden group"
+        >
+          <img
+            src="assets/images/footer-image.jpg"
+            alt=""
+            srcset=""
+            class="w-full object-cover transition group-hover:transition ease-in-out group-hover:ease-in-out delay-150 group-hover:-translate-y-1 group-hover:scale-110 duration-300"
+          />
+          <p class="p-4 text-sm text-justify text-ellipsis overflow-hidden">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate
+            ipsum magni omnis. Totam eos laboriosam omnis numquam ex dolor dicta
+            aliquid odit ut temporibus, quis veritatis labore ducimus! Iste,
+            rerum. Nulla ab fugiat temporibus, autem explicabo ea necessitatibus
+            accusamus iure. Voluptates laboriosam, dolore consectetur eveniet
+            earum similique aliquam ut incidunt delectus autem asperiores
+            repellat quidem dolorum consequuntur quasi odit nemo!
+          </p>
+          <div class="w-full px-4 pt-2">
+            <div
+              class="flex items-center justify-between gap-x-2 w-full pb-2 border-b border-b-gray-400"
+            >
+              <div class="flex items justify-center w-8 md:w-12 h-8 md:h-12">
+                <img
+                  src="assets/images/logo-fepes.png"
+                  alt=""
+                  srcset=""
+                  class="w-full h-full object-contain"
+                />
+              </div>
+              <div class="flex-1 flex flex-col">
+                <p class="line-clamp-1">FEPES - Seminaire Educatif</p>
+                <p class="text-sm text-gray-400 line-clamp-1">24 - 04 - 2023</p>
+              </div>
+              <div
+                class="flex items justify-center w-8 md:w-12 h-8 md:h-12 bg-[#628e2f]"
+              ></div>
+            </div>
+          </div>
+          <div class="flex gap-x-6 py-2">
+            <div class="w-5 h-5 bg-black"></div>
+            <div class="w-5 h-5 bg-black"></div>
+            <div class="w-5 h-5 bg-black"></div>
+          </div>
+        </div>
+        <div
+          class="flex flex-col justify-between items-center gap-y-2 h-[80vh] bg-white shadow-lg overflow-hidden group"
+        >
+          <img
+            src="assets/images/footer-image.jpg"
+            alt=""
+            srcset=""
+            class="w-full object-cover transition group-hover:transition ease-in-out group-hover:ease-in-out delay-150 group-hover:-translate-y-1 group-hover:scale-110 duration-300"
+          />
+          <p class="p-4 text-sm text-justify text-ellipsis overflow-hidden">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate
+            ipsum magni omnis. Totam eos laboriosam omnis numquam ex dolor dicta
+            aliquid odit ut temporibus, quis veritatis labore ducimus! Iste,
+            rerum. Nulla ab fugiat temporibus, autem explicabo ea necessitatibus
+            accusamus iure. Voluptates laboriosam, dolore consectetur eveniet
+            earum similique aliquam ut incidunt delectus autem asperiores
+            repellat quidem dolorum consequuntur quasi odit nemo!
+          </p>
+          <div class="w-full px-4 pt-2">
+            <div
+              class="flex items-center justify-between gap-x-2 w-full pb-2 border-b border-b-gray-400"
+            >
+              <div class="flex items justify-center w-8 md:w-12 h-8 md:h-12">
+                <img
+                  src="assets/images/logo-fepes.png"
+                  alt=""
+                  srcset=""
+                  class="w-full h-full object-contain"
+                />
+              </div>
+              <div class="flex-1 flex flex-col">
+                <p class="line-clamp-1">FEPES - Seminaire Educatif</p>
+                <p class="text-sm text-gray-400 line-clamp-1">24 - 04 - 2023</p>
+              </div>
+              <div
+                class="flex items justify-center w-8 md:w-12 h-8 md:h-12 bg-[#628e2f]"
+              ></div>
+            </div>
+          </div>
+          <div class="flex gap-x-6 py-2">
+            <div class="w-5 h-5 bg-black"></div>
+            <div class="w-5 h-5 bg-black"></div>
+            <div class="w-5 h-5 bg-black"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- ------------------------------------------------ [Our Projects] Zone ------------------------------------------------ -->
+    <!-- [Our Projects] Zone - Head -->
+    <div
+      id="what-we-do"
+      class="flex flex-col items-center justify-center gap-y-2 my-10 lg:my-14 uppercase text-xl md:text-3xl"
+    >
+      <div class="w-10 h-1 bg-[#628e2f]"></div>
+      Nos Projets
+    </div>
+    <!-- [Our Projects] Zone - Content -->
+    <div
+      class="flex flex-col items-center justify-center gap-y-6 pb-10 md:pb-20 bg-gradient-to-t from-[#628e2f] to-transparent"
+    >
+      <div
+        class="flex flex-col md:flex-row items-center justify-center md:gap-x-6 gap-y-6 md:gap-y-0 w-full h-[90vh] px-4"
+      >
+        <div class="relative flex flex-col w-full md:w-1/3 md:h-full">
+          <img
+            src="assets/images/about-us/hero-image.jpg"
+            alt=""
+            srcset=""
+            class="w-full h-full object-cover"
+          />
+          <div class="absolute w-full h-full bg-black opacity-65"></div>
+          <div class="absolute z-20 flex flex-wrap w-10 md:w-20">
+            <div class="flex flex-col">
+              <div
+                class="w-5 md:w-10 h-5 md:h-10 border-r border-b border-white bg-[#628e2f]"
+              ></div>
+              <div
+                class="w-5 md:w-10 h-5 md:h-10 border-r border-b border-white bg-[#628e2f]"
+              ></div>
+            </div>
+            <div
+              class="w-5 md:w-10 h-5 md:h-10 border-r border-b border-white bg-[#628e2f]"
+            ></div>
+          </div>
+          <div
+            class="absolute z-40 flex flex-col items-start justify-end gap-y-2 md:gap-y-4 w-full h-full p-4"
+          >
+            <div class="text-xl text-white line-clamp-2">
+              Repudiandae rem aspernatur, recusandae sequi
+            </div>
+            <div
+              class="text-sm text-white text-justify text-ellipsis overflow-hidden line-clamp-3 md:line-clamp-6"
+            >
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. A,
+              tempora doloribus, fugiat vitae natus deleniti dolores laborum hic
+              error exercitationem rem velit eligendi. Repudiandae rem
+              aspernatur, recusandae sequi doloribus autem. Repellat voluptas
+              dignissimos at cum asperiores doloribus in impedit sit? Inventore
+              harum reiciendis laborum ipsum iusto earum quaerat, error nostrum
+              impedit ut atque omnis velit temporibus, dolore iure. Illum,
+              alias.
+            </div>
+            <div class="w-full h-1 bg-[#628e2f]"></div>
+            <div class="flex items-center justify-between w-full">
+              <!-- Logo & App Name -->
+              <a href="/" class="flex items-center justify-center gap-4">
+                <!-- Logo Zone -->
+                <div class="flex items justify-center w-8 md:w-12 h-8 md:h-12">
+                  <img
+                    src="assets/images/logo-fepes.png"
+                    alt=""
+                    srcset=""
+                    class="w-full h-full object-contain"
+                  />
+                </div>
+                <!-- App Name Zone -->
+                <div class="text-lg md:text-2xl text-white">FEPES</div>
+              </a>
+              <a
+                href="#"
+                class="px-4 py-2 bg-white hover:bg-[#628e2f] text-[#628e2f] hover:text-white"
+                >Lire plus</a
+              >
+            </div>
+          </div>
+        </div>
+        <div class="flex flex-col gap-y-6 w-full md:w-1/3 h-full">
+          <div class="relative flex flex-col md:grow w-full">
+            <img
+              src="assets/images/about-us/hero-image.jpg"
+              alt=""
+              srcset=""
+              class="w-full h-full object-cover"
+            />
+            <div class="absolute w-full h-full bg-black opacity-65"></div>
+            <div class="absolute z-20 flex flex-wrap w-10 md:w-20">
+              <div class="flex flex-col">
+                <div
+                  class="w-5 md:w-10 h-5 md:h-10 border-r border-b border-white bg-[#628e2f]"
+                ></div>
+                <div
+                  class="w-5 md:w-10 h-5 md:h-10 border-r border-b border-white bg-[#628e2f]"
+                ></div>
+              </div>
+              <div
+                class="w-5 md:w-10 h-5 md:h-10 border-r border-b border-white bg-[#628e2f]"
+              ></div>
+            </div>
+            <div
+              class="absolute z-40 flex flex-col items-start justify-end gap-y-2 md:gap-y-4 w-full h-full p-4"
+            >
+              <div class="text-xl text-white line-clamp-2">
+                Repudiandae rem aspernatur, recusandae sequi
+              </div>
+              <div
+                class="text-sm text-white text-justify text-ellipsis overflow-hidden line-clamp-3"
+              >
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. A,
+                tempora doloribus, fugiat vitae natus deleniti dolores laborum
+                hic error exercitationem rem velit eligendi. Repudiandae rem
+                aspernatur, recusandae sequi doloribus autem. Repellat voluptas
+                dignissimos at cum asperiores doloribus in impedit sit?
+                Inventore harum reiciendis laborum ipsum iusto earum quaerat,
+                error nostrum impedit ut atque omnis velit temporibus, dolore
+                iure. Illum, alias.
+              </div>
+              <div class="w-full h-1 bg-[#628e2f]"></div>
+              <div class="flex items-center justify-between w-full">
+                <!-- Logo & App Name -->
+                <a href="/" class="flex items-center justify-center gap-4">
+                  <!-- Logo Zone -->
+                  <div
+                    class="flex items justify-center w-8 md:w-12 h-8 md:h-12"
+                  >
+                    <img
+                      src="assets/images/logo-fepes.png"
+                      alt=""
+                      srcset=""
+                      class="w-full h-full object-contain"
+                    />
+                  </div>
+                  <!-- App Name Zone -->
+                  <div class="text-lg md:text-2xl text-white">FEPES</div>
+                </a>
+                <a
+                  href="#"
+                  class="px-4 py-2 bg-white hover:bg-[#628e2f] text-[#628e2f] hover:text-white"
+                  >Lire plus</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="relative flex flex-col w-full md:h-2/6">
+            <img
+              src="assets/images/about-us/hero-image.jpg"
+              alt=""
+              srcset=""
+              class="w-full h-full object-cover"
+            />
+            <div class="absolute w-full h-full bg-black opacity-65"></div>
+            <div class="absolute z-20 flex flex-wrap w-10 md:w-20">
+              <div class="flex flex-col">
+                <div
+                  class="w-5 md:w-10 h-5 md:h-10 border-r border-b border-white bg-[#628e2f]"
+                ></div>
+                <div
+                  class="w-5 md:w-10 h-5 md:h-10 border-r border-b border-white bg-[#628e2f]"
+                ></div>
+              </div>
+              <div
+                class="w-5 md:w-10 h-5 md:h-10 border-r border-b border-white bg-[#628e2f]"
+              ></div>
+            </div>
+            <div
+              class="absolute z-40 flex flex-col items-start justify-end gap-y-2 w-full h-full p-4 md:p-2"
+            >
+              <div
+                class="text-xl md:text-md text-white md:text-right line-clamp-2"
+              >
+                Repudiandae rem aspernatur, recusandae sequi
+              </div>
+              <div
+                class="text-sm text-white text-justify text-ellipsis overflow-hidden line-clamp-3 md:line-clamp-1"
+              >
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. A,
+                tempora doloribus, fugiat vitae natus deleniti dolores laborum
+                hic error exercitationem rem velit eligendi. Repudiandae rem
+                aspernatur, recusandae sequi doloribus autem. Repellat voluptas
+                dignissimos at cum asperiores doloribus in impedit sit?
+                Inventore harum reiciendis laborum ipsum iusto earum quaerat,
+                error nostrum impedit ut atque omnis velit temporibus, dolore
+                iure. Illum, alias.
+              </div>
+              <div class="w-full h-1 bg-[#628e2f]"></div>
+              <div class="flex items-center justify-between w-full">
+                <!-- Logo & App Name -->
+                <a href="/" class="flex items-center justify-center gap-4">
+                  <!-- Logo Zone -->
+                  <div
+                    class="flex items justify-center w-8 md:w-12 h-8 md:h-12"
+                  >
+                    <img
+                      src="assets/images/logo-fepes.png"
+                      alt=""
+                      srcset=""
+                      class="w-full h-full object-contain"
+                    />
+                  </div>
+                  <!-- App Name Zone -->
+                  <div class="text-lg md:text-2xl text-white">FEPES</div>
+                </a>
+                <a
+                  href="#"
+                  class="px-4 py-2 bg-white hover:bg-[#628e2f] text-[#628e2f] hover:text-white"
+                  >Lire plus</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a
+        href="/pages/projects.html"
+        class="p-4 border-4 border-white hover:bg-white text-white hover:text-[#628e2f] transition ease-in-out duration-700"
+      >
+        Voir plus sur nos projets
+      </a>
+    </div>
+    <!-- ------------------------------------------------ [FEPES Numbers] Zone ------------------------------------------------ -->
+    <div
+      class="flex flex-col md:flex-row items-center justify-evenly md:gap-x-6 gap-y-6 md:gap-y-0 p-10 my-14 bg-slate-300"
+    >
+      <div class="flex flex-col items-center justify-center gap-y-4">
+        <img
+          src="assets/images/hexagon.png"
+          alt=""
+          srcset=""
+          class="w-10 md:w-20"
+        />
+        <p class="text-2xl md:text-4xl text-[#628e2f]">+ 123,987</p>
+        <p class="text-sm text-center">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc suscipit
+          sodales diam
+        </p>
+      </div>
+      <div class="flex flex-col items-center justify-center gap-y-4">
+        <img
+          src="assets/images/square.png"
+          alt=""
+          srcset=""
+          class="w-10 md:w-20"
+        />
+        <p class="text-2xl md:text-4xl text-[#628e2f]">+ 123,987</p>
+        <p class="text-sm text-center">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc suscipit
+          sodales diam
+        </p>
+      </div>
+      <div class="flex flex-col items-center justify-center gap-y-4">
+        <img
+          src="assets/images/triangle.png"
+          alt=""
+          srcset=""
+          class="w-10 md:w-20"
+        />
+        <p class="text-2xl md:text-4xl text-[#628e2f]">+ 123,987</p>
+        <p class="text-sm text-center">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc suscipit
+          sodales diam
+        </p>
+      </div>
+      <div class="flex flex-col items-center justify-center gap-y-4">
+        <img
+          src="assets/images/star.png"
+          alt=""
+          srcset=""
+          class="w-10 md:w-20"
+        />
+        <p class="text-2xl md:text-4xl text-[#628e2f]">+ 123,987</p>
+        <p class="text-sm text-center">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc suscipit
+          sodales diam
+        </p>
+      </div>
+    </div>
+    <!-- ------------------------------------------------ [Donate] Zone ------------------------------------------------ -->
+    <div class="flex justify-center w-full px-4">
+      <div
+        class="flex flex-col md:flex-row items-center justify-between gap-y-4 md:gap-y-0 md:w-4/5 p-3 md:p-4 lg:p-8 rounded-md bg-slate-300"
+      >
+        <div class="flex flex-col items-center md:items-start gap-y-6 md:w-1/2">
+          <p class="text-3xl text-center md:text-start">
+            Support Future Leaders
+          </p>
+          <p class="text-sm text-justify md:text-start">
+            Aliquam id tincidunt diam. Quisque pellentesque felis nec maximus
+            lacinia. Donec id finibus justo. Sed quis mauris sit amet est
+            ullamcorper finibus sit amet a nisi. Sed facilisis nibh placerat,
+            lobortis nunc sed, convallis nibh. Praesent quis ligula ornare,
+            ultricies lacus vitae, dictum nunc. Nam at sem commodo, fringilla
+            nunc id, cursus lacus.
+          </p>
+          <button
+            class="w-fit px-4 py-2 rounded-md bg-[#628e2f] hover:bg-green-900 text-center text-white"
+          >
+            Faire un don
+          </button>
+        </div>
+        <img
+          src="assets/images/donate.svg"
+          alt=""
+          srcset=""
+          class="w-1/2 md:w-1/3"
+        />
+      </div>
+    </div>
+
+ 
+ 
+/** 
+* Template Name: Modèle de page about
+*/
+get_header(); 
+?>
+
+    <!-- Hero Images Zone -->
+    <div class="relative w-full h-[60vh]"> 
+      <div
+        class="absolute z-30 flex flex-col items-center justify-center gap-y-6 w-full h-full pb-10 md:mt-14"
+      >
+        <div
+          class="px-6 py-4 border-4 border-white text-6xl text-white uppercase"
+        >
+          A Propos
+        </div>
+        <div class="w-1/2 h-1 bg-white"></div>
+        <div class="text-2xl text-white">Femmes Porteuses d&apos;Espoir</div>
+      </div>
+      <div class="absolute w-full h-full bg-black opacity-75"></div>
+      <img
+        src="/wp-content/themes/fepes/assets/images/about-us/hero-image.jpg"
+        alt=""
+        srcset=""
+        class="w-full h-full object-cover"
+      />
+    </div>
+    <!-- President Text -->
+    <div></div>
+    <!-- ------------------------------------------------ [General Overview] Zone ------------------------------------------------ -->
+    <!-- [General Overview] Zone - Head -->
+    <div
+      class="flex flex-col items-center justify-center gap-y-2 px-4 my-10 lg:my-14 text-center uppercase text-xl md:text-3xl"
+    >
+      <div class="w-10 h-1 bg-[#628e2f]"></div> 
+      FEPES - Femmes Porteuses d'Espoir
+    </div>
+    <!-- [General Overview] Zone - Content -->
+    <div class="px-4 text-sm text-center mb-10">
+      L’association Femmes Porteuses d’Espoir (FEPES) est une organisation
+      féminine nationale à but non lucratif créée en 2012 avec pour siège
+      Garoua. Elle a son siège au quartier plateau taparé, elle a un bureau
+      annexe dans la commune de Ngong et des points focaux dans plusieurs villes
+      du septentrion. Elle est née suite à une analyse situationnelle basée sur
+      les constats suivants:
+    </div>
+    <div class="flex items-center justify-center mb-10">
+      <div
+        class="grid grid-cols-1 md:grid-cols-3 items-center justify-items-center gap-5 w-4/5 px-4"
+      >
+        <div
+          class="flex items-center justify-center w-full h-full px-4 py-2 bg-[#628e2f] text-center text-white"
+        >
+          La marginalisation de la femme et de la fille
+        </div>
+        <div
+          class="flex items-center justify-center w-full h-full px-4 py-2 border border-[#628e2f] text-center text-[#628e2f]"
+        >
+          La dépendance financière et matérielle des femmes
+        </div>
+        <div
+          class="flex items-center justify-center w-full h-full px-4 py-2 bg-[#628e2f] text-center text-white"
+        >
+          Le secteur économique détenu par les hommes
+        </div>
+        <div
+          class="flex items-center justify-center w-full h-full px-4 py-2 border border-[#628e2f] text-center text-[#628e2f]"
+        >
+          Le non-respect des droits de femme/fille
+        </div>
+        <div
+          class="flex items-center justify-center w-full h-full px-4 py-2 bg-[#628e2f] text-center text-white"
+        >
+          La sous-scolarisation de la femme et de la jeune fille
+        </div>
+        <div
+          class="flex items-center justify-center w-full h-full px-4 py-2 border border-[#628e2f] text-center text-[#628e2f]"
+        >
+          Le taux élevé des VBG
+        </div>
+        <div
+          class="flex items-center justify-center w-full h-full px-4 py-2 bg-[#628e2f] text-center text-white"
+        >
+          La prolifération du mariage forcé
+        </div>
+        <div
+          class="flex items-center justify-center w-full h-full px-4 py-2 border border-[#628e2f] text-center text-[#628e2f]"
+        >
+          Le taux élevé des IST/ VIH chez la femme
+        </div>
+        <div
+          class="flex items-center justify-center w-full h-full px-4 py-2 bg-[#628e2f] text-center text-white"
+        >
+          Le manque de formation et d’information de la femme et de la fille
+        </div>
+      </div>
+    </div>
+    <div class="px-4 text-sm text-center mb-10">
+      L’ambition de créer FEPES procède davantage de deux raisons fondamentales.
+      D’une part, il est question d’accroitre la prise en compte des droits et
+      du bien-être des filles et des femmes pour favoriser la pleine réalisation
+      de leurs potentiels. D’autre part, la conscience qu’une Nation ne peut
+      véritablement prospérer sans une politique d’intégration de la gent
+      féminine au développement socioéconomique et politique.
+    </div>
+    <!-- ------------------------------------------------ [Our Mission & Our Vision] Zone ------------------------------------------------ -->
+    <div
+      class="flex flex-wrap items-center justify-center md:gap-x-8 gap-y-8 md:gap-y-0 px-4 my-10"
+    >
+      <!-- [Our Vision] -->
+      <div
+        class="flex flex-col gap-y-6 w-full md:w-2/5 h-1/2 md:h-1/3 p-8 rounded-md border-2 border-[#628e2f] hover:bg-[#628e2f] hover:text-white group"
+      >
+        <!-- [Our Vision] Side - Head -->
+        <div
+          class="flex flex-col justify-center gap-y-2 uppercase text-xl md:text-3xl"
+        >
+          <div class="w-16 h-1 bg-[#628e2f] group-hover:bg-white"></div>
+          Notre Vision
+        </div>
+        <!-- [Our Vision] Side - Content -->
+        <div class="text-md">
+          Une société égalitaire et inclusive où les droits des filles et des
+          femmes sont reconnus et valorisés pour la réalisation de leurs
+          potentiels.
+        </div>
+        <div
+          class="flex flex-col gap-y-4 text-[#628e2f] group-hover:text-white"
+        >
+          <div class="w-2/3 h-1 bg-[#628e2f] group-hover:bg-white"></div>
+          <p>Femmes Porteuses d'Espoir</p>
+        </div>
+      </div>
+      <!-- Our Mission -->
+      <div
+        class="flex flex-col gap-y-6 w-full md:w-2/5 h-1/2 md:h-1/3 p-8 rounded-md border-2 border-[#628e2f] bg-[#628e2f] hover:bg-white text-white hover:text-black group"
+      >
+        <!-- [Our Mission] Side - Head -->
+        <div
+          class="flex flex-col justify-center gap-y-2 uppercase text-xl md:text-3xl"
+        >
+          <div class="w-16 h-1 bg-white group-hover:bg-[#628e2f]"></div>
+          Notre Mission
+        </div>
+        <!-- [Our Mission] Side - Content -->
+        <div class="text-md">
+          Une société égalitaire et inclusive où les droits des filles et des
+          femmes sont reconnus et valorisés pour la réalisation de leurs
+          potentiels.
+        </div>
+        <div
+          class="flex flex-col gap-y-4 text-white group-hover:text-[#628e2f]"
+        >
+          <div class="w-2/3 h-1 bg-white group-hover:bg-[#628e2f]"></div>
+          <p>Femmes Porteuses d'Espoir</p>
+        </div>
+      </div>
+    </div>
+    <!-- Text of the President -->
+    <div
+      class="relative flex flex-col items-center md:items-end gap-y-4 h-auto p-8 md:px-20 my-24 md:my-36 bg-slate-300"
+    >
+      <img
+        src="/wp-content/themes/fepes/assets/images/julie-queen-1.jpg"
+        alt=""
+        srcset=""
+        class="absolute -top-14 md:-top-20 md:left-20 w-4/5 md:w-2/5 h-2/6 md:h-[50vw] lg:h-[50vw] xl:h-[50vh] object-cover"
+      /> 
+      <div class="md:hidden h-[25vh]">l</div>
+      <div class="flex justify-center md:justify-start w-full md:w-3/6 text-xl text-[#628e2f] text-center md:text-left">
+        Message de la Presidente
+      </div>
+      <div class="w-full md:w-3/6 text-sm md:text-base text-justify">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iure
+        aspernatur, itaque et voluptatibus necessitatibus voluptates nesciunt.
+        Eaque sequi delectus blanditiis. Molestiae asperiores sit deleniti
+        error, enim voluptate consectetur veritatis eaque? Eveniet iure aut
+        atque voluptatem at, sed harum, deleniti, eum reiciendis non sunt rem
+        provident dolore quam voluptatum quisquam quasi. Eos veniam maiores
+        dolore eaque fugiat, repellendus voluptatibus nobis a? Quaerat explicabo
+        placeat doloribus autem repudiandae nostrum architecto nisi beatae amet
+        ducimus porro hic iure quam, nemo adipisci ratione vel laboriosam
+        laudantium odio sunt debitis? Cupiditate alias quis voluptatibus
+        voluptatum! Minima reprehenderit perspiciatis alias vitae nam sit non
+        fugit earum autem, quos voluptas reiciendis assumenda rem dicta esse ad
+        eum ab eius libero quas temporibus corrupti aliquam. Impedit, hic nemo.
+      </div>
+      <div class="w-2/3 md:w-1/2 h-1 bg-[#628e2f]"></div>
+      <div class="flex flex-col items-center md:items-start gap-y-2 w-full md:w-3/6">
+        <div class="text-xl text-center md:text-start">La Presidente</div>
+        <div class="text-2xl text-[#628e2f] uppercase text-center md:text-start">
+          Ekanga Simone Epse Nkouanjio
+        </div>
+      </div>
+    </div>
+ 
+ /** 
+* Template Name: Modèle de page activities
+*/
+get_header(); 
+?>
+
+    <!-- Hero Images Zone -->
+    <div class="relative w-full h-[60vh]">
+      <div class="absolute z-30 flex flex-col items-center justify-center gap-y-6 w-full h-full pb-10 md:mt-14">
+        <div class="px-6 py-4 border-4 border-white text-6xl text-white uppercase" >
+          Activites
+        </div>
+        <div class="w-1/2 h-1 bg-white"></div>
+        <div class="text-2xl text-white">Femmes Porteuses d&apos;Espoir</div>
+      </div>
+      <div class="absolute w-full h-full bg-black opacity-75"></div>
+      <img
+        src=" the_post_thumbnail_url()?>"
+        alt=""
+        srcset=""
+        class="w-full h-full object-cover"
+      />
+    </div>
+    <!-- [Current Activities] Zone - Head -->
+
+    <!-- [Current Activities] Zone - Content -->
+    <!-- [All Activities] Zone - Head -->
+    <div
+      id="what-we-do"
+      class="flex flex-col items-center justify-center gap-y-2 my-10 lg:my-14 uppercase text-xl md:text-3xl"
+    >
+      <div class="w-10 h-1 bg-[#628e2f]"></div>
+      Activites
+    </div>
+    <!-- [All Activities] Zone - Content -->
+    <div class="flex flex-col items-center justify-center pb-10 md:pb-20 bg-slate-300">
+      <div class="grid grid-cols-3 md:grid-cols-2 lg:grid-cols-3 gap-x-6 md:gap-x-10 w-full px-4 md:px-10 py-8">
+        
+          $recentPosts2 = new WP_Query();
+          $recentPosts2->query(['showposts=10','category_name'=>'Activité']);
+       
+         if($recentPosts2->have_posts()) :
+           while($recentPosts2->have_posts()) : $recentPosts2->the_post();
+
+          <div class="relative flex flex-col md:grow w-full min-h-[20rem] mx-6 px-6">
+            <img
+              src=" get_the_post_thumbnail_url()?>"
+              alt=""
+              srcset=""
+              class="w-full h-full object-cover"
+            />
+            <div class="absolute w-full h-full bg-black opacity-65"></div>
+            <div class="absolute z-20 flex flex-wrap w-10 md:w-20">
+              <div class="flex flex-col">
+                <div
+                  class="w-5 md:w-10 h-5 md:h-10 border-r border-b border-white bg-[#628e2f]"
+                ></div>
+                <div
+                  class="w-5 md:w-10 h-5 md:h-10 border-r border-b border-white bg-[#628e2f]"
+                ></div>
+              </div>
+              <div
+                class="w-5 md:w-10 h-5 md:h-10 border-r border-b border-white bg-[#628e2f]"
+              ></div>
+            </div>
+            <div class="absolute z-40 flex flex-col items-start justify-end gap-y-2 md:gap-y-4 w-full h-full p-4">
+              <div class="text-xl text-white line-clamp-2">
+                 the_title();
+              </div>
+              <div class="text-sm text-white text-justify text-ellipsis overflow-hidden line-clamp-3">
+                 the_content();
+              </div>
+              <div class="w-full h-1 bg-[#628e2f]"></div>
+              <div class="flex items-center justify-between w-full">
+                <!-- Logo & App Name -->
+                <a href="/" class="flex items-center justify-center gap-4">
+                  <!-- Logo Zone -->
+                  <div
+                    class="flex items justify-center w-8 md:w-12 h-8 md:h-12"
+                  >
+                    <img
+                      src="/wp-content/themes/fepes/assets/images/logo-fepes.png"
+                      alt=""
+                      srcset=""
+                      class="w-full h-full object-contain"
+                    />
+                  </div>
+                  <!-- App Name Zone -->
+                  <div class="text-lg md:text-2xl text-white">FEPES</div>
+                </a>
+                <a href=" the_permalink();" class="px-4 py-2 bg-white hover:bg-[#628e2f] text-[#628e2f] hover:text-white">Lire plus</a
+                >
+              </div>
+            </div>
+          </div>
+          
+        
+          <h2>pas d'article</h2>
+        
+      </div>
+    </div>
+    <!-- ------------------------------------------------ [FEPES Numbers] Zone ------------------------------------------------ -->
+    <div class="flex flex-col md:flex-row items-center justify-evenly md:gap-x-6 gap-y-6 md:gap-y-0 p-10 my-14 bg-slate-300">
+      <div class="flex flex-col items-center justify-center gap-y-4">
+        <img
+          src="../assets/images/hexagon.png"
+          alt=""
+          srcset=""
+          class="w-10 md:w-20"
+        />
+        <p class="text-2xl md:text-4xl text-[#628e2f]">+ 123,987</p>
+        <p class="text-sm text-center">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc suscipit
+          sodales diam
+        </p>
+      </div>
+      <div class="flex flex-col items-center justify-center gap-y-4">
+        <img
+          src="../assets/images/square.png"
+          alt=""
+          srcset=""
+          class="w-10 md:w-20"
+        />
+        <p class="text-2xl md:text-4xl text-[#628e2f]">+ 123,987</p>
+        <p class="text-sm text-center">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc suscipit
+          sodales diam
+        </p>
+      </div>
+      <div class="flex flex-col items-center justify-center gap-y-4">
+        <img
+          src="../assets/images/triangle.png"
+          alt=""
+          srcset=""
+          class="w-10 md:w-20"
+        />
+        <p class="text-2xl md:text-4xl text-[#628e2f]">+ 123,987</p>
+        <p class="text-sm text-center">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc suscipit
+          sodales diam
+        </p>
+      </div>
+      <div class="flex flex-col items-center justify-center gap-y-4">
+        <img
+          src="../assets/images/star.png"
+          alt=""
+          srcset=""
+          class="w-10 md:w-20"
+        />
+        <p class="text-2xl md:text-4xl text-[#628e2f]">+ 123,987</p>
+        <p class="text-sm text-center">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc suscipit
+          sodales diam
+        </p>
+      </div>
+    </div>
+    <!-- ------------------------------------------------ [Donate] Zone ------------------------------------------------ -->
+    <div class="flex justify-center w-full px-4">
+      <div
+        class="flex flex-col md:flex-row items-center justify-between gap-y-4 md:gap-y-0 md:w-4/5 p-3 md:p-4 lg:p-8 rounded-md bg-slate-300"
+      >
+        <div class="flex flex-col items-center md:items-start gap-y-6 md:w-1/2">
+          <p class="text-3xl text-center md:text-start">
+            Support Future Leaders
+          </p>
+          <p class="text-sm text-justify md:text-start">
+            Aliquam id tincidunt diam. Quisque pellentesque felis nec maximus
+            lacinia. Donec id finibus justo. Sed quis mauris sit amet est
+            ullamcorper finibus sit amet a nisi. Sed facilisis nibh placerat,
+            lobortis nunc sed, convallis nibh. Praesent quis ligula ornare,
+            ultricies lacus vitae, dictum nunc. Nam at sem commodo, fringilla
+            nunc id, cursus lacus.
+          </p>
+          <button
+            class="w-fit px-4 py-2 rounded-md bg-[#628e2f] hover:bg-green-900 text-center text-white"
+          >
+            Faire un don
+          </button>
+        </div>
+        <img
+          src="../assets/images/donate.svg"
+          alt=""
+          srcset=""
+          class="w-1/2 md:w-1/3"
+        />
+      </div>
+    </div>
+ 
+
+
+ /** 
+* Template Name: Modèle de page contact
+*/
+get_header(); 
+?>
+
+    <!-- Hero Images Zone -->
+    <div class="relative w-full h-[60vh]">
+      <div
+        class="absolute z-30 flex flex-col items-center justify-center gap-y-6 w-full h-full pb-10 md:mt-14"
+      >
+        <div
+          class="px-6 py-4 border-4 border-white text-6xl text-white uppercase"
+        >
+          Contactez Nous
+        </div>
+        <div class="w-1/2 h-1 bg-white"></div>
+        <div class="text-2xl text-white">Femmes Porteuses d&apos;Espoir</div>
+      </div>
+      <div class="absolute w-full h-full bg-black opacity-75"></div>
+      <img
+        src="/wp-content/themes/fepes/assets/images/contacts/hero-image.jpg"
+        alt=""
+        srcset=""
+        class="w-full h-full object-cover"
+      />
+    </div>
+    <div
+      class="flex flex-col items-center justify-center gap-y-2 px-4 my-10 lg:my-14 text-center uppercase text-xl md:text-3xl"
+    >
+      <div class="w-10 h-1 bg-[#628e2f]"></div>
+      Une question, Une remarque? Contactez nous maintenant
+    </div>
+    <div class="flex flex-col md:flex-row items-center justify-center">
+      <div
+        class="flex flex-col justify-evenly gap-y-4 w-3/5 md:w-1/3 md:h-[25vw] p-4 md:p-8 rounded-l-md bg-slate-200 text-md md:text-xl"
+      >
+        <div class="flex gap-x-6 items-center">
+          <img
+            src="/wp-content/themes/fepes/assets/icons/telephone.png"
+            alt=""
+            srcset=""
+            class="w-5 md:w-10 h-5 md:h-10"
+          />
+          (237) 655 552 034
+        </div>
+        <div class="flex gap-x-6 items-center">
+          <img
+            src="/wp-content/themes/fepes/assets/icons/email.png"
+            alt=""
+            srcset=""
+            class="w-5 md:w-10 h-5 md:h-10"
+          />
+          <a href="mailto:fepescam@gmail.com"> fepescam@gmail.com</a>
+        </div>
+        <div class="flex gap-x-6 items-center">
+          <img
+            src="/wp-content/themes/fepes/assets/icons/map-marker.png"
+            alt=""
+            srcset=""
+            class="w-5 md:w-10 h-5 md:h-10"
+          />
+          Plateau Tapare . Garoua - Cameroun
+        </div>
+      </div>
+      <form
+        class="flex flex-col justify-evenly items-center gap-y-4 w-1/2 md:h-[40vw] p-4 md:p-8 rounded-md bg-[#628e2f] text-white"
+      >
+        <div class="flex items-center justify-between gap-x-4 w-full">
+          <div class="flex flex-col gap-y-2 w-1/2">
+            <p>Prenom</p>
+            <input
+              type="text"
+              name="firstname"
+              id="firstname"
+              class="border-b border-b-white bg-transparent focus:outline-none placeholder-slate-300 placeholder:text-sm"
+              placeholder="votre prenom"
+            />
+          </div>
+          <div class="flex flex-col gap-y-2 w-1/2">
+            <p>Nom</p>
+            <input
+              type="text"
+              name="name"
+              id="name"
+              class="border-b border-b-white bg-transparent focus:outline-none placeholder-slate-300 placeholder:text-sm"
+              placeholder="votre nom"
+            />
+          </div>
+        </div>
+        <div class="flex items-center justify-between gap-x-4 w-full">
+          <div class="flex flex-col gap-y-2 w-1/2">
+            <p>Email</p>
+            <input
+              type="email"
+              name="email"
+              id="email"
+              class="border-b border-b-white bg-transparent focus:outline-none placeholder-slate-300 placeholder:text-sm"
+              placeholder="votre email"
+            />
+          </div>
+          <div class="flex flex-col gap-y-2 w-1/2">
+            <p>Telephone</p>
+            <input
+              type="tel"
+              name="phone"
+              id="phone"
+              class="border-b border-b-white bg-transparent focus:outline-none placeholder-slate-300 placeholder:text-sm"
+              placeholder="votre numero de telephone"
+            />
+          </div>
+        </div>
+        <div class="flex justify-between gap-x-4 w-full">
+          <div class="flex flex-col gap-y-2 w-1/2">
+            <p>Sujet</p>
+            <input
+              type="text"
+              name="subject"
+              id="subject"
+              class="border-b border-b-white bg-transparent focus:outline-none placeholder-slate-300 placeholder:text-sm"
+              placeholder="sujet (question / remarque)"
+            />
+          </div>
+          <div class="flex flex-col gap-y-2 w-1/2">
+            <p>Description</p>
+            <textarea
+              name="description"
+              id="description"
+              rows="5"
+              class="border border-white bg-transparent focus:outline-none placeholder-slate-300 placeholder:text-sm"
+              placeholder="formulez votre question ou remarque"
+            ></textarea>
+          </div>
+        </div>
+        <button
+          type="submit"
+          class="w-fit px-4 py-2 rounded-md bg-white text-center text-[#628e2f]"
+        >
+          Contactez Nous
+        </button>
+      </form>
+    </div>
+
+
+ 
+ 
+    /*Template Name: Modèle de page simplifier*/
+get_header(); 
+?>
+
+
+
+      <!-- First zone -->
+      <div class="w-full text-center text-2xl md:text-3xl lg:text-5xl py-5 nd:py-10 lg:py-16 bg-gray-200">
+         the_title()
+      </div>
+
+      <!-- Second zone -->
+      <div class="w-full h-[90vh] relative flex">
+        <div class="absolute flex inset-0">
+          <div class="w-3/4 h-full bg-gray-200 pl-40 py-24"></div>
+          <div class="w-1/4 h-full bg-[#00540d]"></div>
+        </div>
+        <div class="sm:w-full sm:grid sm:grid-cols-1 sm:justify-items-center px-14 lg:px-0 absolute inset-0 py-10 bg-transparent lg:flex text-black">
+          <!-- Left area -->
+          <div class="lg:w-1/2 w-full lg:h-full lg:pr-40 grid sm:grid-cols-1 sm:justify-items-center lg:justify-items-start lg:grid-cols-3 justify-between items-center">
+            <div class="w-[8vh] col-span-1 h-[8vh] sm:mb-10 bg-[#00540d]"></div>
+            <div class="sm:w-full h-full col-span-2 grid content-center">
+              <div class="grid grid-cols-1 gap-y-8">
+                 the_content()
+              </div>
+            </div>
+          </div>
+
+          <!-- Right area -->
+          <div class="lg:w-1/2 sm:w-full lg:h-full p-10 hidden lg:block">
+            <div
+              class="relative w-3/4 sm:w-full h-full px-20 py-32 bg-black grid grid-cols-1 gap-y-0.5 items-center"
+            >
+              <div
+                class="absolute top-[-3vh] left-[-3vh] w-[8vh] h-[8vh] bg-[#00540d]"
+              ></div>
+              <div
+                class="flex items-center justify-between text-lg text-white"
+              >
+                <div class="p-2 h-12 w-12">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="currentColor"
+                    class="text-lg"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"
+                    />
+                  </svg>
+                </div>
+                <span class="sr-only">Phone</span>
+                <p>(237) 677 038 781 
+                   get_field('contact_mtn'); / 655 811 916
+                   get_field('contact_orange');</p>
+              </div>
+              <div
+                class="flex items-center justify-between text-lg text-white"
+              >
+                <div class="p-2 h-12 w-12">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                    zoomAndPan="magnify"
+                    viewBox="2 2 25 25"
+                    preserveAspectRatio="xMidYMid meet"
+                    version="1.0"
+                    id="IconChangeColor"
+                    class="text-lg"
+                  >
+                    <defs>
+                      <clipPath id="id1">
+                        <path
+                          d="M 3.460938 6.5625 L 26.539062 6.5625 L 26.539062 24.707031 L 3.460938 24.707031 Z M 3.460938 6.5625 "
+                          clip-rule="nonzero"
+                          id="mainIconPathAttribute"
+                          fill="#ffffff"
+                        ></path>
+                      </clipPath>
+                    </defs>
+                    <g clip-path="url(#id1)">
+                      <path
+                        fill="#ffffff"
+                        d="M 24.230469 11.101562 L 15 16.769531 L 5.769531 11.101562 L 5.769531 8.832031 L 15 14.503906 L 24.230469 8.832031 Z M 24.230469 6.5625 L 5.769531 6.5625 C 4.492188 6.5625 3.472656 7.578125 3.472656 8.832031 L 3.460938 22.441406 C 3.460938 23.695312 4.492188 24.707031 5.769531 24.707031 L 24.230469 24.707031 C 25.507812 24.707031 26.539062 23.695312 26.539062 22.441406 L 26.539062 8.832031 C 26.539062 7.578125 25.507812 6.5625 24.230469 6.5625 "
+                        fill-opacity="1"
+                        fill-rule="nonzero"
+                        id="mainIconPathAttribute"
+                      ></path>
+                    </g>
+                  </svg>
+                </div>
+                <span class="sr-only">Email Address</span>
+                <p>contact@livingseedslab.com get_field('adresse_de_messagerie');</p>
+              </div>
+              <div
+                class="flex items-center justify-between text-lg text-white"
+              >
+                <div class="p-2 h-12 w-12">
+                  <svg
+                    style="color: white"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="currentColor"
+                    class="bi bi-globe"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm7.5-6.923c-.67.204-1.335.82-1.887 1.855A7.97 7.97 0 0 0 5.145 4H7.5V1.077zM4.09 4a9.267 9.267 0 0 1 .64-1.539 6.7 6.7 0 0 1 .597-.933A7.025 7.025 0 0 0 2.255 4H4.09zm-.582 3.5c.03-.877.138-1.718.312-2.5H1.674a6.958 6.958 0 0 0-.656 2.5h2.49zM4.847 5a12.5 12.5 0 0 0-.338 2.5H7.5V5H4.847zM8.5 5v2.5h2.99a12.495 12.495 0 0 0-.337-2.5H8.5zM4.51 8.5a12.5 12.5 0 0 0 .337 2.5H7.5V8.5H4.51zm3.99 0V11h2.653c.187-.765.306-1.608.338-2.5H8.5zM5.145 12c.138.386.295.744.468 1.068.552 1.035 1.218 1.65 1.887 1.855V12H5.145zm.182 2.472a6.696 6.696 0 0 1-.597-.933A9.268 9.268 0 0 1 4.09 12H2.255a7.024 7.024 0 0 0 3.072 2.472zM3.82 11a13.652 13.652 0 0 1-.312-2.5h-2.49c.062.89.291 1.733.656 2.5H3.82zm6.853 3.472A7.024 7.024 0 0 0 13.745 12H11.91a9.27 9.27 0 0 1-.64 1.539 6.688 6.688 0 0 1-.597.933zM8.5 12v2.923c.67-.204 1.335-.82 1.887-1.855.173-.324.33-.682.468-1.068H8.5zm3.68-1h2.146c.365-.767.594-1.61.656-2.5h-2.49a13.65 13.65 0 0 1-.312 2.5zm2.802-3.5a6.959 6.959 0 0 0-.656-2.5H12.18c.174.782.282 1.623.312 2.5h2.49zM11.27 2.461c.247.464.462.98.64 1.539h1.835a7.024 7.024 0 0 0-3.072-2.472c.218.284.418.598.597.933zM10.855 4a7.966 7.966 0 0 0-.468-1.068C9.835 1.897 9.17 1.282 8.5 1.077V4h2.355z"
+                      fill="white"
+                    ></path>
+                  </svg>
+                </div>
+                <span class="sr-only">Web Site</span>
+                <p>www.livingseedslab.org</p>
+              </div>
+              <div
+                class="flex items-center justify-between text-lg text-white"
+              >
+                <div class="p-2 h-12 w-12">
+                  <svg
+                    style="color: white"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="currentColor"
+                    class="bi bi-geo-alt-fill"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"
+                      fill="white"
+                    ></path>
+                  </svg>
+                </div>
+                <span class="sr-only">Map Position</span>
+                <p>Garoua - Cameroon get_field('localisation_entreprise');</p>
+              </div>
+              <ul class="flex justify-evenly pt-4">
+                <li>
+                  <a href="#" class="text-white">
+                    <div class="p-2 h-12 w-12 border border-3">
+                      <svg
+                        class="text-lg"
+                        fill="currentColor"
+                        viewBox="0 0 24 24"
+                        aria-hidden="true"
+                      >
+                        <path
+                          d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"
+                        ></path>
+                      </svg>
+                      <span class="sr-only">Twitter page</span>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="text-white">
+                    <div class="p-2 h-12 w-12 border border-3">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="currentColor"
+                        class="bi bi-github"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"
+                        />
+                      </svg>
+                      <span class="sr-only">GitHub Account</span>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="text-white">
+                    <div class="p-2 h-12 w-12 border border-3">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="currentColor"
+                        class="bi bi-facebook"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"
+                        />
+                      </svg>
+                      <span class="sr-only">Facebook Page</span>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="text-white">
+                    <div class="p-2 h-12 w-12 border border-3">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="currentColor"
+                        class="bi bi-linkedin"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"
+                        />
+                      </svg>
+                      <span class="sr-only">LinkedIn Page</span>
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+ 
+
+ /** 
+* Template Name: Modèle de page members
+*/
+get_header(); 
+?>
+
+    <!-- Hero Images Zone -->
+    <div class="relative w-full h-[60vh]">
+      <div
+        class="absolute z-30 flex flex-col items-center justify-center gap-y-6 w-full h-full pb-10 md:mt-14"
+      >
+        <div
+          class="px-6 py-4 border-4 border-white text-6xl text-white uppercase"
+        >
+          Membres
+        </div>
+        <div class="w-1/2 h-1 bg-white"></div>
+        <div class="text-2xl text-white">Femmes Porteuses d&apos;Espoir</div>
+      </div>
+      <div class="absolute w-full h-full bg-black opacity-75"></div>
+      <img
+        src="/wp-content/themes/fepes/assets/images/membres/hero-image.jpg"
+        alt=""
+        srcset=""
+        class="w-full h-full object-cover"
+      />
+    </div>
+    <!-- FEPES Page - Content -->
+    <div
+      class="flex flex-col items-center justify-center gap-y-2 px-4 my-10 lg:my-14 text-center uppercase text-xl md:text-3xl"
+    >
+      <div class="w-10 h-1 bg-[#628e2f]"></div>
+      Presidente de FEPES
+    </div>
+    <div
+      class="relative flex items-center md:items-end md:gap-x-8 gap-y-4 md:gap-y-0 h-auto my-24 md:my-36"
+    >
+      <div
+        class="absolute top-0 left-40 w-[35vw] md:h-[35vw] p-8 rounded-md bg-[#628e2f] rotate-45"
+      >
+        <img
+          src="/wp-content/themes/fepes/assets/images/julie-queen-1.jpg"
+          alt=""
+          srcset=""
+          class="w-full h-full rounded-full object-cover -rotate-45"
+        />
+      </div>
+      <div
+        class="flex flex-col items-end justify-center gap-y-6 w-full md:min-h-[35vw] p-8 md:px-20 md:py-10 bg-slate-300"
+      >
+        <div class="flex flex-col items-end gap-y-2 w-full">
+          <p class="text-3xl">Ekanga Simone Epse Nkouanjio</p>
+          <div class="w-3/5 h-1 bg-[#628e2f]"></div>
+          <p class="text-xl text-[#628e2f]">Presidente de FEPES</p>
+        </div>
+
+        <div class="w-2/5 text-right">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum nobis
+          nam assumenda, sed voluptates doloribus adipisci expedita enim
+          praesentium minima quo accusantium, ducimus dignissimos aut iusto
+          nostrum temporibus quos facilis!
+        </div>
+        <div class="w-3/5 h-1 bg-[#628e2f]"></div>
+        <p class="text-xl text-[#628e2f]">FEPES - Femmes Porteuses d'Espoir</p>
+      </div>
+    </div>
+    <div
+      class="flex flex-col items-center justify-center gap-y-2 px-4 my-10 lg:my-14 text-center uppercase text-xl md:text-3xl"
+    >
+      <div class="w-10 h-1 bg-[#628e2f]"></div>
+      Membres Executifs
+    </div>
+    <div
+      class="flex flex-col md:flex-row md:gap-x-8 gap-y-8 md:gap-y-0 w-full px-8 md:px-10 my-10 md:mt-14"
+    >
+      <div
+        class="flex flex-col md:flex-row md:items-end md:gap-x-4 gapy-4 md:gap-y-0 w-full md:w-1/2 md:h-[30vw]"
+      >
+        <div
+          class="w-1/2 h-full p-2 rounded-md border-2 border-dotted border-white bg-[#628e2f]"
+        >
+          <img
+            src="/wp-content/themes/fepes/assets/images/membres/hero-image.jpg"
+            alt=""
+            srcset=""
+            class="w-full h-full rounded-md object-cover"
+          />
+        </div>
+        <div
+          class="flex flex-col gap-y-4 w-1/2 h-fit p-4 rounded-md border border-[#628e2f] shadow-lg"
+        >
+          <div class="flex flex-col gap-y-2">
+            <p class="text-2xl">Julie Queen</p>
+            <div class="w-3/5 h-1 bg-[#628e2f]"></div>
+            <p class="text-[#628e2f]">Responsable Finances</p>
+          </div>
+          <p class="text-sm">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem
+            eius, quod neque quam maiores ut aut ullam et iusto suscipit libero
+            ducimus, debitis quas minima!
+          </p>
+          <div class="w-3/5 h-1 bg-[#628e2f]"></div>
+          <p class="text-sm text-[#628e2f]">
+            FEPES - Femmes Porteuses d'Espoir
+          </p>
+        </div>
+      </div>
+      <div
+        class="flex flex-col md:flex-row md:items-end md:gap-x-4 gapy-4 md:gap-y-0 w-full md:w-1/2 md:h-[30vw]"
+      >
+        <div
+          class="w-1/2 h-full p-2 rounded-md border-2 border-dotted border-white bg-[#628e2f]"
+        >
+          <img
+            src="/wp-content/themes/fepes/assets/images/membres/hero-image.jpg"
+            alt=""
+            srcset=""
+            class="w-full h-full rounded-md object-cover"
+          />
+        </div>
+        <div
+          class="flex flex-col gap-y-4 w-1/2 h-fit p-4 rounded-md border border-[#628e2f] shadow-lg"
+        >
+          <div class="flex flex-col gap-y-2">
+            <p class="text-2xl">Julie Queen</p>
+            <div class="w-3/5 h-1 bg-[#628e2f]"></div>
+            <p class="text-[#628e2f]">Responsable Finances</p>
+          </div>
+          <p class="text-sm">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem
+            eius, quod neque quam maiores ut aut ullam et iusto suscipit libero
+            ducimus, debitis quas minima!
+          </p>
+          <div class="w-3/5 h-1 bg-[#628e2f]"></div>
+          <p class="text-sm text-[#628e2f]">
+            FEPES - Femmes Porteuses d'Espoir
+          </p>
+        </div>
+      </div>
+    </div>
+    <div
+      class="flex flex-col md:flex-row md:gap-x-8 gap-y-8 md:gap-y-0 w-full px-8 md:px-10 my-10 md:mt-14"
+    >
+      <div
+        class="flex flex-col md:flex-row md:items-end md:gap-x-4 gapy-4 md:gap-y-0 w-full md:w-1/2 md:h-[30vw]"
+      >
+        <div
+          class="w-1/2 h-full p-2 rounded-md border-2 border-dotted border-white bg-[#628e2f]"
+        >
+          <img
+            src="/wp-content/themes/fepes/assets/images/membres/hero-image.jpg"
+            alt=""
+            srcset=""
+            class="w-full h-full rounded-md object-cover"
+          />
+        </div>
+        <div
+          class="flex flex-col gap-y-4 w-1/2 h-fit p-4 rounded-md border border-[#628e2f] shadow-lg"
+        >
+          <div class="flex flex-col gap-y-2">
+            <p class="text-2xl">Julie Queen</p>
+            <div class="w-3/5 h-1 bg-[#628e2f]"></div>
+            <p class="text-[#628e2f]">Responsable Finances</p>
+          </div>
+          <p class="text-sm">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem
+            eius, quod neque quam maiores ut aut ullam et iusto suscipit libero
+            ducimus, debitis quas minima!
+          </p>
+          <div class="w-3/5 h-1 bg-[#628e2f]"></div>
+          <p class="text-sm text-[#628e2f]">
+            FEPES - Femmes Porteuses d'Espoir
+          </p>
+        </div>
+      </div>
+      <div
+        class="flex flex-col md:flex-row md:items-end md:gap-x-4 gapy-4 md:gap-y-0 w-full md:w-1/2 md:h-[30vw]"
+      >
+        <div
+          class="w-1/2 h-full p-2 rounded-md border-2 border-dotted border-white bg-[#628e2f]"
+        >
+          <img
+            src="/wp-content/themes/fepes/assets/images/membres/hero-image.jpg"
+            alt=""
+            srcset=""
+            class="w-full h-full rounded-md object-cover"
+          />
+        </div>
+        <div
+          class="flex flex-col gap-y-4 w-1/2 h-fit p-4 rounded-md border border-[#628e2f] shadow-lg"
+        >
+          <div class="flex flex-col gap-y-2">
+            <p class="text-2xl">Julie Queen</p>
+            <div class="w-3/5 h-1 bg-[#628e2f]"></div>
+            <p class="text-[#628e2f]">Responsable Finances</p>
+          </div>
+          <p class="text-sm">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem
+            eius, quod neque quam maiores ut aut ullam et iusto suscipit libero
+            ducimus, debitis quas minima!
+          </p>
+          <div class="w-3/5 h-1 bg-[#628e2f]"></div>
+          <p class="text-sm text-[#628e2f]">
+            FEPES - Femmes Porteuses d'Espoir
+          </p>
+        </div>
+      </div>
+    </div>
+    <div
+      class="flex flex-col md:flex-row md:gap-x-8 gap-y-8 md:gap-y-0 w-full px-8 md:px-10 my-10 md:mt-14"
+    >
+      <div
+        class="flex flex-col md:flex-row md:items-end md:gap-x-4 gapy-4 md:gap-y-0 w-full md:w-1/2 md:h-[30vw]"
+      >
+        <div
+          class="w-1/2 h-full p-2 rounded-md border-2 border-dotted border-white bg-[#628e2f]"
+        >
+          <img
+            src="/wp-content/themes/fepes/assets/images/membres/hero-image.jpg"
+            alt=""
+            srcset=""
+            class="w-full h-full rounded-md object-cover"
+          />
+        </div>
+        <div
+          class="flex flex-col gap-y-4 w-1/2 h-fit p-4 rounded-md border border-[#628e2f] shadow-lg"
+        >
+          <div class="flex flex-col gap-y-2">
+            <p class="text-2xl">Julie Queen</p>
+            <div class="w-3/5 h-1 bg-[#628e2f]"></div>
+            <p class="text-[#628e2f]">Responsable Finances</p>
+          </div>
+          <p class="text-sm">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem
+            eius, quod neque quam maiores ut aut ullam et iusto suscipit libero
+            ducimus, debitis quas minima!
+          </p>
+          <div class="w-3/5 h-1 bg-[#628e2f]"></div>
+          <p class="text-sm text-[#628e2f]">
+            FEPES - Femmes Porteuses d'Espoir
+          </p>
+        </div>
+      </div>
+      <div
+        class="flex flex-col md:flex-row md:items-end md:gap-x-4 gapy-4 md:gap-y-0 w-full md:w-1/2 md:h-[30vw]"
+      >
+        <div
+          class="w-1/2 h-full p-2 rounded-md border-2 border-dotted border-white bg-[#628e2f]"
+        >
+          <img
+            src="/wp-content/themes/fepes/assets/images/membres/hero-image.jpg"
+            alt=""
+            srcset=""
+            class="w-full h-full rounded-md object-cover"
+          />
+        </div>
+        <div
+          class="flex flex-col gap-y-4 w-1/2 h-fit p-4 rounded-md border border-[#628e2f] shadow-lg"
+        >
+          <div class="flex flex-col gap-y-2">
+            <p class="text-2xl">Julie Queen</p>
+            <div class="w-3/5 h-1 bg-[#628e2f]"></div>
+            <p class="text-[#628e2f]">Responsable Finances</p>
+          </div>
+          <p class="text-sm">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem
+            eius, quod neque quam maiores ut aut ullam et iusto suscipit libero
+            ducimus, debitis quas minima!
+          </p>
+          <div class="w-3/5 h-1 bg-[#628e2f]"></div>
+          <p class="text-sm text-[#628e2f]">
+            FEPES - Femmes Porteuses d'Espoir
+          </p>
+        </div>
+      </div>
+    </div>
+    <div
+      class="flex flex-col md:flex-row md:gap-x-8 gap-y-8 md:gap-y-0 w-full px-8 md:px-10 my-10 md:mt-14"
+    >
+      <div
+        class="flex flex-col md:flex-row md:items-end md:gap-x-4 gapy-4 md:gap-y-0 w-full md:w-1/2 md:h-[30vw]"
+      >
+        <div
+          class="w-1/2 h-full p-2 rounded-md border-2 border-dotted border-white bg-[#628e2f]"
+        >
+          <img
+            src="/wp-content/themes/fepes/assets/images/membres/hero-image.jpg"
+            alt=""
+            srcset=""
+            class="w-full h-full rounded-md object-cover"
+          />
+        </div>
+        <div
+          class="flex flex-col gap-y-4 w-1/2 h-fit p-4 rounded-md border border-[#628e2f] shadow-lg"
+        >
+          <div class="flex flex-col gap-y-2">
+            <p class="text-2xl">Julie Queen</p>
+            <div class="w-3/5 h-1 bg-[#628e2f]"></div>
+            <p class="text-[#628e2f]">Responsable Finances</p>
+          </div>
+          <p class="text-sm">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem
+            eius, quod neque quam maiores ut aut ullam et iusto suscipit libero
+            ducimus, debitis quas minima!
+          </p>
+          <div class="w-3/5 h-1 bg-[#628e2f]"></div>
+          <p class="text-sm text-[#628e2f]">
+            FEPES - Femmes Porteuses d'Espoir
+          </p>
+        </div>
+      </div>
+      <div
+        class="flex flex-col md:flex-row md:items-end md:gap-x-4 gapy-4 md:gap-y-0 w-full md:w-1/2 md:h-[30vw]"
+      >
+        <div
+          class="w-1/2 h-full p-2 rounded-md border-2 border-dotted border-white bg-[#628e2f]"
+        >
+          <img
+            src="/wp-content/themes/fepes/assets/images/membres/hero-image.jpg"
+            alt=""
+            srcset=""
+            class="w-full h-full rounded-md object-cover"
+          />
+        </div>
+        <div
+          class="flex flex-col gap-y-4 w-1/2 h-fit p-4 rounded-md border border-[#628e2f] shadow-lg"
+        >
+          <div class="flex flex-col gap-y-2">
+            <p class="text-2xl">Julie Queen</p>
+            <div class="w-3/5 h-1 bg-[#628e2f]"></div>
+            <p class="text-[#628e2f]">Responsable Finances</p>
+          </div>
+          <p class="text-sm">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem
+            eius, quod neque quam maiores ut aut ullam et iusto suscipit libero
+            ducimus, debitis quas minima!
+          </p>
+          <div class="w-3/5 h-1 bg-[#628e2f]"></div>
+          <p class="text-sm text-[#628e2f]">
+            FEPES - Femmes Porteuses d'Espoir
+          </p>
+        </div>
+      </div>
+    </div>
+    <div
+      class="flex flex-col md:flex-row md:gap-x-8 gap-y-8 md:gap-y-0 w-full px-8 md:px-10 my-10 md:mt-14"
+    >
+      <div
+        class="flex flex-col md:flex-row md:items-end md:gap-x-4 gapy-4 md:gap-y-0 w-full md:w-1/2 md:h-[30vw]"
+      >
+        <div
+          class="w-1/2 h-full p-2 rounded-md border-2 border-dotted border-white bg-[#628e2f]"
+        >
+          <img
+            src="/wp-content/themes/fepes/assets/images/membres/hero-image.jpg"
+            alt=""
+            srcset=""
+            class="w-full h-full rounded-md object-cover"
+          />
+        </div>
+        <div
+          class="flex flex-col gap-y-4 w-1/2 h-fit p-4 rounded-md border border-[#628e2f] shadow-lg"
+        >
+          <div class="flex flex-col gap-y-2">
+            <p class="text-2xl">Julie Queen</p>
+            <div class="w-3/5 h-1 bg-[#628e2f]"></div>
+            <p class="text-[#628e2f]">Responsable Finances</p>
+          </div>
+          <p class="text-sm">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem
+            eius, quod neque quam maiores ut aut ullam et iusto suscipit libero
+            ducimus, debitis quas minima!
+          </p>
+          <div class="w-3/5 h-1 bg-[#628e2f]"></div>
+          <p class="text-sm text-[#628e2f]">
+            FEPES - Femmes Porteuses d'Espoir
+          </p>
+        </div>
+      </div>
+      <div
+        class="flex flex-col md:flex-row md:items-end md:gap-x-4 gapy-4 md:gap-y-0 w-full md:w-1/2 md:h-[30vw]"
+      >
+        <div
+          class="w-1/2 h-full p-2 rounded-md border-2 border-dotted border-white bg-[#628e2f]"
+        >
+          <img
+            src="/wp-content/themes/fepes/assets/images/membres/hero-image.jpg"
+            alt=""
+            srcset=""
+            class="w-full h-full rounded-md object-cover"
+          />
+        </div>
+        <div
+          class="flex flex-col gap-y-4 w-1/2 h-fit p-4 rounded-md border border-[#628e2f] shadow-lg"
+        >
+          <div class="flex flex-col gap-y-2">
+            <p class="text-2xl">Julie Queen</p>
+            <div class="w-3/5 h-1 bg-[#628e2f]"></div>
+            <p class="text-[#628e2f]">Responsable Finances</p>
+          </div>
+          <p class="text-sm">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem
+            eius, quod neque quam maiores ut aut ullam et iusto suscipit libero
+            ducimus, debitis quas minima!
+          </p>
+          <div class="w-3/5 h-1 bg-[#628e2f]"></div>
+          <p class="text-sm text-[#628e2f]">
+            FEPES - Femmes Porteuses d'Espoir
+          </p>
+        </div>
+      </div>
+    </div>
+    <!-- ------------------------------------------------ [FEPES Numbers] Zone ------------------------------------------------ -->
+    <div
+      class="flex flex-col md:flex-row items-center justify-evenly md:gap-x-6 gap-y-6 md:gap-y-0 p-10 my-14 bg-slate-300"
+    >
+      <div class="flex flex-col items-center justify-center gap-y-4">
+        <img
+          src="/wp-content/themes/fepes/assets/images/hexagon.png"
+          alt=""
+          srcset=""
+          class="w-10 md:w-20"
+        />
+        <p class="text-2xl md:text-4xl text-[#628e2f]">+ 123,987</p>
+        <p class="text-sm text-center">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc suscipit
+          sodales diam
+        </p>
+      </div>
+      <div class="flex flex-col items-center justify-center gap-y-4">
+        <img
+          src="/wp-content/themes/fepes/assets/images/square.png"
+          alt=""
+          srcset=""
+          class="w-10 md:w-20"
+        />
+        <p class="text-2xl md:text-4xl text-[#628e2f]">+ 123,987</p>
+        <p class="text-sm text-center">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc suscipit
+          sodales diam
+        </p>
+      </div>
+      <div class="flex flex-col items-center justify-center gap-y-4">
+        <img
+          src="/wp-content/themes/fepes/assets/images/triangle.png"
+          alt=""
+          srcset=""
+          class="w-10 md:w-20"
+        />
+        <p class="text-2xl md:text-4xl text-[#628e2f]">+ 123,987</p>
+        <p class="text-sm text-center">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc suscipit
+          sodales diam
+        </p>
+      </div>
+      <div class="flex flex-col items-center justify-center gap-y-4">
+        <img
+          src="/wp-content/themes/fepes/assets/images/star.png"
+          alt=""
+          srcset=""
+          class="w-10 md:w-20"
+        />
+        <p class="text-2xl md:text-4xl text-[#628e2f]">+ 123,987</p>
+        <p class="text-sm text-center">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc suscipit
+          sodales diam
+        </p>
+      </div>
+    </div>
+    <!-- ------------------------------------------------ [Donate] Zone ------------------------------------------------ -->
+    <div class="flex justify-center w-full px-4">
+      <div
+        class="flex flex-col md:flex-row items-center justify-between gap-y-4 md:gap-y-0 md:w-4/5 p-3 md:p-4 lg:p-8 rounded-md bg-slate-300"
+      >
+        <div class="flex flex-col items-center md:items-start gap-y-6 md:w-1/2">
+          <p class="text-3xl text-center md:text-start">
+            Support Future Leaders
+          </p>
+          <p class="text-sm text-justify md:text-start">
+            Aliquam id tincidunt diam. Quisque pellentesque felis nec maximus
+            lacinia. Donec id finibus justo. Sed quis mauris sit amet est
+            ullamcorper finibus sit amet a nisi. Sed facilisis nibh placerat,
+            lobortis nunc sed, convallis nibh. Praesent quis ligula ornare,
+            ultricies lacus vitae, dictum nunc. Nam at sem commodo, fringilla
+            nunc id, cursus lacus.
+          </p>
+          <button
+            class="w-fit px-4 py-2 rounded-md bg-[#628e2f] hover:bg-green-900 text-center text-white"
+          >
+            Faire un don
+          </button>
+        </div>
+        <img
+          src="/wp-content/themes/fepes/assets/images/donate.svg"
+          alt=""
+          srcset=""
+          class="w-1/2 md:w-1/3"
+        />
+      </div>
+    </div>
+    
+ 
+
+ /** 
+* Template Name: Modèle de page projects
+*/
+get_header(); 
+?>
+
+    <!-- Hero Images Zone -->
+    <div class="relative w-full h-[60vh]">
+      <div class="absolute z-30 flex flex-col items-center justify-center gap-y-6 w-full h-full pb-10 md:mt-14">
+        <div class="px-6 py-4 border-4 border-white text-6xl text-white uppercase">
+          Projets
+        </div>
+        <div class="w-1/2 h-1 bg-white"></div>
+        <div class="text-2xl text-white">Femmes Porteuses d&apos;Espoir</div>
+      </div>
+      <div class="absolute w-full h-full bg-black opacity-75"></div>
+      <img
+        src=" the_post_thumbnail_url()"
+        alt=""
+        srcset=""
+        class="w-full h-full object-cover"
+      />
+    </div>
+
+    <div class="flex flex-col items-center justify-center gap-y-2 my-10 lg:my-14 uppercase text-xl md:text-3xl">
+      <div class="w-10 h-1 bg-[#628e2f]"></div>
+      Education
+    </div>
+    <div class="flex flex-col items-center justify-center pb-10 md:pb-20">
+      <div class="grid grid-cols-3 md:grid-cols-2 lg:grid-cols-3 gap-x-6 md:gap-x-10 w-full px-4 md:px-10 py-8">
+        
+          $recentPosts2 = new WP_Query();
+          $recentPosts2->query(['showposts=10','category_name'=>'Education']);
+       
+         if($recentPosts2->have_posts()) :
+           while($recentPosts2->have_posts()) : $recentPosts2->the_post();
+
+          <div class="relative flex flex-col md:grow w-full min-h-[20rem] mx-6 px-6">
+            <img
+              src=" get_the_post_thumbnail_url()?>"
+              alt=""
+              srcset=""
+              class="w-full h-full object-cover"
+            />
+            <div class="absolute w-full h-full bg-black opacity-65"></div>
+            <div class="absolute z-20 flex flex-wrap w-10 md:w-20">
+              <div class="flex flex-col">
+                <div
+                  class="w-5 md:w-10 h-5 md:h-10 border-r border-b border-white bg-[#628e2f]"
+                ></div>
+                <div
+                  class="w-5 md:w-10 h-5 md:h-10 border-r border-b border-white bg-[#628e2f]"
+                ></div>
+              </div>
+              <div
+                class="w-5 md:w-10 h-5 md:h-10 border-r border-b border-white bg-[#628e2f]"
+              ></div>
+            </div>
+            <div class="absolute z-40 flex flex-col items-start justify-end gap-y-2 md:gap-y-4 w-full h-full p-4">
+              <div class="text-xl text-white line-clamp-2">
+                 the_title();
+              </div>
+              <div class="text-sm text-white text-justify text-ellipsis overflow-hidden line-clamp-3">
+                 the_content();
+              </div>
+              <div class="w-full h-1 bg-[#628e2f]"></div>
+              <div class="flex items-center justify-between w-full">
+                <!-- Logo & App Name -->
+                <a href="/" class="flex items-center justify-center gap-4">
+                  <!-- Logo Zone -->
+                  <div
+                    class="flex items justify-center w-8 md:w-12 h-8 md:h-12"
+                  >
+                    <img
+                      src="/wp-content/themes/fepes/assets/images/logo-fepes.png"
+                      alt=""
+                      srcset=""
+                      class="w-full h-full object-contain"
+                    />
+                  </div>
+                  <!-- App Name Zone -->
+                  <div class="text-lg md:text-2xl text-white">FEPES</div>
+                </a>
+                <a href=" the_permalink();" class="px-4 py-2 bg-white hover:bg-[#628e2f] text-[#628e2f] hover:text-white">Lire plus</a
+                >
+              </div>
+            </div>
+          </div>
+          
+        
+          <h2>Pas d'article ...</h2>
+        
+      </div>
+    </div>
+    <div class="flex flex-col items-center justify-center gap-y-2 my-10 lg:my-14 uppercase text-xl md:text-3xl">
+      <div class="w-10 h-1 bg-[#628e2f]"></div>
+      Sante
+    </div>
+    <div class="flex flex-col items-center justify-center pb-10 md:pb-20">
+      <div class="grid grid-cols-3 md:grid-cols-2 lg:grid-cols-3 gap-x-6 md:gap-x-10 w-full px-4 md:px-10 py-8">
+        
+          $recentPosts2 = new WP_Query();
+          $recentPosts2->query(['showposts=10','category_name'=>'Santé']);
+       
+         if($recentPosts2->have_posts()) :
+           while($recentPosts2->have_posts()) : $recentPosts2->the_post();
+
+          <div class="relative flex flex-col md:grow w-full min-h-[20rem] mx-6 px-6">
+            <img
+              src=" get_the_post_thumbnail_url()?>"
+              alt=""
+              srcset=""
+              class="w-full h-full object-cover"
+            />
+            <div class="absolute w-full h-full bg-black opacity-65"></div>
+            <div class="absolute z-20 flex flex-wrap w-10 md:w-20">
+              <div class="flex flex-col">
+                <div
+                  class="w-5 md:w-10 h-5 md:h-10 border-r border-b border-white bg-[#628e2f]"
+                ></div>
+                <div
+                  class="w-5 md:w-10 h-5 md:h-10 border-r border-b border-white bg-[#628e2f]"
+                ></div>
+              </div>
+              <div
+                class="w-5 md:w-10 h-5 md:h-10 border-r border-b border-white bg-[#628e2f]"
+              ></div>
+            </div>
+            <div class="absolute z-40 flex flex-col items-start justify-end gap-y-2 md:gap-y-4 w-full h-full p-4">
+              <div class="text-xl text-white line-clamp-2">
+                 the_title();
+              </div>
+              <div class="text-sm text-white text-justify text-ellipsis overflow-hidden line-clamp-3">
+                 the_content();
+              </div>
+              <div class="w-full h-1 bg-[#628e2f]"></div>
+              <div class="flex items-center justify-between w-full">
+                <!-- Logo & App Name -->
+                <a href="/" class="flex items-center justify-center gap-4">
+                  <!-- Logo Zone -->
+                  <div
+                    class="flex items justify-center w-8 md:w-12 h-8 md:h-12"
+                  >
+                    <img
+                      src="/wp-content/themes/fepes/assets/images/logo-fepes.png"
+                      alt=""
+                      srcset=""
+                      class="w-full h-full object-contain"
+                    />
+                  </div>
+                  <!-- App Name Zone -->
+                  <div class="text-lg md:text-2xl text-white">FEPES</div>
+                </a>
+                <a href=" the_permalink();" class="px-4 py-2 bg-white hover:bg-[#628e2f] text-[#628e2f] hover:text-white">Lire plus</a
+                >
+              </div>
+            </div>
+          </div>
+          
+        
+          <h2>Pas d'article ...</h2>
+        
+      </div>
+    </div>
+    <div class="flex flex-col items-center justify-center gap-y-2 my-10 lg:my-14 uppercase text-xl md:text-3xl">
+      <div class="w-10 h-1 bg-[#628e2f]"></div>
+      Developpement Durable
+    </div>
+    <div class="flex flex-col items-center justify-center pb-10 md:pb-20">
+      <div class="grid grid-cols-3 md:grid-cols-2 lg:grid-cols-3 gap-x-6 md:gap-x-10 w-full px-4 md:px-10 py-8">
+        
+          $recentPosts2 = new WP_Query();
+          $recentPosts2->query(['showposts=10','category_name'=>'Développement durable']);
+       
+         if($recentPosts2->have_posts()) :
+           while($recentPosts2->have_posts()) : $recentPosts2->the_post();
+
+          <div class="relative flex flex-col md:grow w-full min-h-[20rem] mx-6 px-6">
+            <img
+              src=" get_the_post_thumbnail_url()?>"
+              alt=""
+              srcset=""
+              class="w-full h-full object-cover"
+            />
+            <div class="absolute w-full h-full bg-black opacity-65"></div>
+            <div class="absolute z-20 flex flex-wrap w-10 md:w-20">
+              <div class="flex flex-col">
+                <div
+                  class="w-5 md:w-10 h-5 md:h-10 border-r border-b border-white bg-[#628e2f]"
+                ></div>
+                <div
+                  class="w-5 md:w-10 h-5 md:h-10 border-r border-b border-white bg-[#628e2f]"
+                ></div>
+              </div>
+              <div
+                class="w-5 md:w-10 h-5 md:h-10 border-r border-b border-white bg-[#628e2f]"
+              ></div>
+            </div>
+            <div class="absolute z-40 flex flex-col items-start justify-end gap-y-2 md:gap-y-4 w-full h-full p-4">
+              <div class="text-xl text-white line-clamp-2">
+                 the_title();
+              </div>
+              <div class="text-sm text-white text-justify text-ellipsis overflow-hidden line-clamp-3">
+                 the_content();
+              </div>
+              <div class="w-full h-1 bg-[#628e2f]"></div>
+              <div class="flex items-center justify-between w-full">
+                <!-- Logo & App Name -->
+                <a href="/" class="flex items-center justify-center gap-4">
+                  <!-- Logo Zone -->
+                  <div
+                    class="flex items justify-center w-8 md:w-12 h-8 md:h-12"
+                  >
+                    <img
+                      src="/wp-content/themes/fepes/assets/images/logo-fepes.png"
+                      alt=""
+                      srcset=""
+                      class="w-full h-full object-contain"
+                    />
+                  </div>
+                  <!-- App Name Zone -->
+                  <div class="text-lg md:text-2xl text-white">FEPES</div>
+                </a>
+                <a href=" the_permalink();" class="px-4 py-2 bg-white hover:bg-[#628e2f] text-[#628e2f] hover:text-white">Lire plus</a
+                >
+              </div>
+            </div>
+          </div>
+          
+        
+          <h2>Pas d'article ...</h2>
+        
+      </div>
+    </div>
+
+     
+
